@@ -1,12 +1,13 @@
 import AppBar from '../../components/AppBar';
-import withRoot from '../../modules/withRoot';
+import ProductHero from '../../components/ProductHero';
 import ProductCTA from '../ProductCTA';
 import ProductCategories from '../ProductCategories';
 import ProductSmokingHero from '../ProductSmokingHero';
 import AppFooter from '../AppFooter';
-import ProductHero from '../ProductHero';
 import ProductValues from '../ProductValues';
 import ProductHowItWorks from '../ProductHowItWorks';
+
+import withRoot from '../../modules/withRoot';
 
 function Landing() {
 	return (

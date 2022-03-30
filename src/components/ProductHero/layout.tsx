@@ -4,13 +4,18 @@ import { SxProps } from '@mui/system';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
+import {
+  KeyboardArrowDown as ArrowDownIcon
+} from '@mui/icons-material';
+
+
 const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
   color: theme.palette.common.white,
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  [theme.breakpoints.up('sm')]: {
-    height: '80vh',
+  [theme.breakpoints.up('xs')]: {
+    height: '90vh',
     minHeight: 500,
     maxHeight: 1300,
   },
@@ -47,12 +52,6 @@ export default function ProductHeroLayout(
           alignItems: 'center',
         }}
       >
-        <img
-          src="/static/themes/onepirate/productHeroWonder.png"
-          alt="wonder"
-          width="147"
-          height="80"
-        />
         {children}
         <Box
           sx={{
@@ -67,14 +66,7 @@ export default function ProductHeroLayout(
           }}
         />
         <Background sx={sxBackground} />
-        <Box
-          component="img"
-          src="/static/themes/onepirate/productHeroArrowDown.png"
-          height="16"
-          width="12"
-          alt="arrow down"
-          sx={{ position: 'absolute', bottom: 32 }}
-        />
+        <ArrowDownIcon fontSize="large" sx={{ position: 'absolute', bottom: 32 }} />
       </Container>
     </ProductHeroLayoutRoot>
   );

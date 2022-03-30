@@ -1,6 +1,5 @@
 import { Fragment, useState } from "react";
 import {
-  AppBar,
   Box,
   Button,
   Container,
@@ -18,7 +17,7 @@ import {
 } from '@mui/material';
 
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { DrawerBoxContent, DrawerPageList } from "./styles";
+import { DrawerBoxContent, DrawerPageList, StyledAppBar } from "./styles";
 
 const pages = ["Home", "Sobre Nós", "Unidades", "Contato"];
 
@@ -27,7 +26,7 @@ const ResponsiveAppBar = () => {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
   return (
-    <AppBar position="static">
+    <StyledAppBar position="static" sx={{ maxHeight: 80 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Desktop Logo */}
@@ -44,8 +43,8 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
+              aria-label="menu mobile icon button"
+              aria-controls="menu-mobile"
               aria-haspopup="true"
               onClick={() => setDrawerOpen(true)}
               color="inherit"
@@ -143,7 +142,7 @@ const ResponsiveAppBar = () => {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar >
+    </StyledAppBar>
   );
 };
 export default ResponsiveAppBar;

@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
 
 import {
+  AppBar,
   Box,
   List,
 } from '@mui/material';
+
+export const StyledAppBar = styled(AppBar)`
+  maxHeight: 80px;
+`;
 
 export const DrawerBoxContent = styled(Box)`
   display: flex;
