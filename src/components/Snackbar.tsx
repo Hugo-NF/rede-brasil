@@ -8,8 +8,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
 import { TransitionProps } from '@mui/material/transitions/transition';
 
-const styles = (theme: Theme) =>
-({
+const styles = (theme: Theme) => ({
   content: {
     backgroundColor: theme.palette.secondary.light,
     color: theme.palette.text.primary,
@@ -38,20 +37,16 @@ const styles = (theme: Theme) =>
   },
 } as const);
 
-function Transition(
-  props: TransitionProps & { children: React.ReactElement<any, any> },
-) {
-  return <Slide {...props} direction="down" />;
-}
+const Transition = (props: TransitionProps & { children: React.ReactElement<any, any> }) => <Slide {...props} direction="down" />;
 
 interface ExtraSnackbarProps {
   closeFunc?: () => void;
 }
 
-function Snackbar(
-  props: WithStyles<typeof styles> & SnackbarProps & ExtraSnackbarProps,
-) {
-  const { classes, message, closeFunc, ...other } = props;
+const Snackbar = (props: WithStyles<typeof styles> & SnackbarProps & ExtraSnackbarProps) => {
+  const {
+    classes, message, closeFunc, ...other
+  } = props;
 
   return (
     <MuiSnackbar
@@ -65,12 +60,12 @@ function Snackbar(
           action: classes.contentAction,
         },
       }}
-      message={
-        <React.Fragment>
+      message={(
+        <>
           <InfoIcon className={classes.info} />
           <span>{message}</span>
-        </React.Fragment>
-      }
+        </>
+      )}
       action={[
         <IconButton
           key="close"
@@ -85,6 +80,6 @@ function Snackbar(
       {...other}
     />
   );
-}
+};
 
 export default withStyles(styles)(Snackbar);

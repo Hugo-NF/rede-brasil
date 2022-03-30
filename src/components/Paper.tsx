@@ -1,4 +1,3 @@
-import * as React from 'react';
 import MuiPaper, { PaperProps } from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 
@@ -16,17 +15,21 @@ const PaperRoot = styled(MuiPaper, {
   }),
 }));
 
-export default function Paper(props: PaperProps & ExtraPaperProps) {
-  const { background, classes, className, padding = false, ...other } = props;
+const Paper = ({
+  background,
+  classes,
+  className,
+  padding = false,
+  ...other
+}: PaperProps & ExtraPaperProps) => (
+  <PaperRoot
+    square
+    elevation={0}
+    background={background}
+    padding={padding}
+    className={className}
+    {...other}
+  />
+);
 
-  return (
-    <PaperRoot
-      square
-      elevation={0}
-      background={background}
-      padding={padding}
-      className={className}
-      {...other}
-    />
-  );
-}
+export default Paper;

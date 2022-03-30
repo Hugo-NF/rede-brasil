@@ -3,11 +3,11 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import TextField from '../components/TextField';
+// import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
-function ProductCTA() {
+const ProductCTA = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -39,12 +39,12 @@ function ProductCTA() {
               <Typography variant="h5">
                 Taste the holidays of the everyday close to home.
               </Typography>
-              <TextField
+              {/* <TextField
                 noBorder
                 placeholder="Your email"
                 variant="standard"
                 sx={{ width: '100%', mt: 3, mb: 2 }}
-              />
+              /> */}
               <Button
                 type="submit"
                 color="primary"
@@ -96,6 +96,6 @@ function ProductCTA() {
       />
     </Container>
   );
-}
+};
 
 export default ProductCTA;

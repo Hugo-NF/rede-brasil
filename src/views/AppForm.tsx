@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Paper from '../components/Paper';
 
-export default function AppForm(props: React.HTMLAttributes<HTMLDivElement>) {
+const AppForm = (props: React.HTMLAttributes<HTMLDivElement>) => {
   const { children } = props;
 
   return (
@@ -26,4 +26,6 @@ export default function AppForm(props: React.HTMLAttributes<HTMLDivElement>) {
       </Container>
     </Box>
   );
-}
+};
+
+export default AppForm;

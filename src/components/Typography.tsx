@@ -77,12 +77,12 @@ const variantMapping = {
   subtitle1: 'h3',
 };
 
-function Typography<C extends React.ElementType>(
-  props: TypographyProps<C, { component?: C }> &
-    WithStyles<typeof styles> &
-    ExtraTypographyProps,
-) {
-  const { children, variant, classes, marked = 'none', ...other } = props;
+const Typography = <C extends React.ElementType>(props: TypographyProps<C, { component?: C }> &
+  WithStyles<typeof styles> &
+  ExtraTypographyProps) => {
+  const {
+    children, variant, classes, marked = 'none', ...other
+  } = props;
 
   let markedClassName = '';
   if (variant && variant in markStyleMapping[marked]) {
@@ -95,6 +95,6 @@ function Typography<C extends React.ElementType>(
       {markedClassName ? <span className={markedClassName} /> : null}
     </MuiTypography>
   );
-}
+};
 
 export default withStyles(styles)(Typography);
