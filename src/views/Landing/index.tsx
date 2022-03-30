@@ -10,18 +10,18 @@ import ProductHowItWorks from '../ProductHowItWorks';
 import withRoot from '../../modules/withRoot';
 
 function Landing() {
-	return (
-		<>
-			<AppBar />
-			<ProductHero />
-			<ProductValues />
-			<ProductCategories />
-			<ProductHowItWorks />
-			<ProductCTA />
-			<ProductSmokingHero />
-			<AppFooter />
-		</>
-	);
+  return (
+    <>
+      <AppBar />
+      <ProductHero />
+      <ProductValues />
+      <ProductCategories />
+      <ProductHowItWorks />
+      <ProductCTA />
+      <ProductSmokingHero />
+      <AppFooter />
+    </>
+  );
 }
 
 export default withRoot(Landing);

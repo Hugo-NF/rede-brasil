@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState } from 'react';
 import {
   Box,
   Button,
@@ -17,9 +17,9 @@ import {
 } from '@mui/material';
 
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { DrawerBoxContent, DrawerPageList, StyledAppBar } from "./styles";
+import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
 
-const pages = ["Home", "Sobre Nós", "Unidades", "Contato"];
+const pages = ['Home', 'Sobre Nós', 'Unidades', 'Contato'];
 
 const ResponsiveAppBar = () => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
@@ -34,13 +34,13 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
             LOGO
           </Typography>
 
           {/* Mobile drawer */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="menu mobile icon button"
@@ -59,7 +59,7 @@ const ResponsiveAppBar = () => {
               sx={{
                 flex: 1,
                 width: 100,
-                display: { xs: "block", md: "none" }
+                display: { xs: 'block', md: 'none' },
               }}
             >
               <DrawerBoxContent>
@@ -83,7 +83,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             LOGO
           </Typography>
@@ -92,14 +92,14 @@ const ResponsiveAppBar = () => {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              justifyContent: "center"
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'center',
             }}
           >
             {pages.map((page) => (
               <Button
                 key={page}
-                sx={{ my: 3, color: "white", display: "block" }}
+                sx={{ my: 3, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
@@ -112,7 +112,7 @@ const ResponsiveAppBar = () => {
               variant="contained"
               color="secondary"
               onClick={() => setDialogOpen(true)}
-              sx={{ display: { xs: "none", md: "block" } }}
+              sx={{ display: { xs: 'none', md: 'block' } }}
             >
               Compre Agora
             </Button>
@@ -127,9 +127,9 @@ const ResponsiveAppBar = () => {
               <DialogContent>
                 <DialogContentText>
                   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content here&apos;,
                   making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-                  and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
+                  and a search for &apos;lorem ipsum&apos; will uncover many web sites still in their infancy. Various versions have evolved over the years,
                   sometimes by accident, sometimes on purpose (injected humour and the like).
                 </DialogContentText>
               </DialogContent>
