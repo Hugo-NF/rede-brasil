@@ -1,27 +1,6 @@
-import * as React from 'react';
-import ProductCategories from './views/ProductCategories';
-import ProductSmokingHero from './views/ProductSmokingHero';
-import AppFooter from './views/AppFooter';
-import ProductHero from './views/ProductHero';
-import ProductValues from './views/ProductValues';
-import ProductHowItWorks from './views/ProductHowItWorks';
-import ProductCTA from './views/ProductCTA';
-import AppBar from './components/AppBar';
 import withRoot from './modules/withRoot';
+import Landing from './views/Landing';
 
-function Index() {
-  return (
-    <React.Fragment>
-      <AppBar />
-      <ProductHero />
-      <ProductValues />
-      <ProductCategories />
-      <ProductHowItWorks />
-      <ProductCTA />
-      <ProductSmokingHero />
-      <AppFooter />
-    </React.Fragment>
-  );
-}
+const Index = () => (<Landing />);
 
 export default withRoot(Index);
