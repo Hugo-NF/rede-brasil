@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
   AppBar,
   Box,
@@ -67,12 +67,12 @@ const ResponsiveAppBar = () => {
                 <Button variant="contained" color="secondary" onClick={() => setDialogOpen(true)}>Compre Agora</Button>
                 <DrawerPageList>
                   {pages.map((page) => (
-                    <>
-                      <ListItem key={page} onClick={() => setDrawerOpen(false)}>
+                    <Fragment key={page}>
+                      <ListItem onClick={() => setDrawerOpen(false)}>
                         <Typography textAlign="center">{page}</Typography>
                       </ListItem>
                       <Divider />
-                    </>
+                    </Fragment>
                   ))}
                 </DrawerPageList>
               </DrawerBoxContent>
