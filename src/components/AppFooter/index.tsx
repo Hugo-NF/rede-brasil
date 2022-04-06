@@ -25,9 +25,9 @@ const AppFooter = () => (
     sx={{ display: 'flex', bgcolor: 'primary.main' }}
   >
     <Container sx={{ my: 2, display: 'flex' }}>
-      <Grid container spacing={5}>
+      <Grid container spacing={4}>
         {/* Logo grid - first column */}
-        <Grid item xs={6} sm={4} md={4}>
+        <Grid item xs={12} sm={4} xl={4}>
           <ColumnGrid
             container
             spacing={2}
@@ -37,7 +37,7 @@ const AppFooter = () => (
                 variant="h6"
                 noWrap
                 component="div"
-                sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                sx={{ mr: 2, display: 'flex' }}
               >
                 LOGO
               </Typography>
@@ -45,7 +45,7 @@ const AppFooter = () => (
           </ColumnGrid>
         </Grid>
         {/* Navitems grid - second column */}
-        <Grid item xs={6} sm={4} md={4}>
+        <Grid item xs={12} sm={8} xl={4}>
           <ColumnGrid
             container
             spacing={2}
@@ -63,7 +63,7 @@ const AppFooter = () => (
           </ColumnGrid>
         </Grid>
         {/* Order button grid - third column */}
-        <Grid item xs={6} sm={4} md={4}>
+        <Grid item xs={12} sm={6} xl={4}>
           <ColumnGrid
             container
             spacing={2}
@@ -74,7 +74,7 @@ const AppFooter = () => (
           </ColumnGrid>
         </Grid>
         {/* Social Media Row */}
-        <SocialMediaRow item xs={12}>
+        <SocialMediaRow item xs={12} sm={6} xl={12}>
           <Typography color="inherit">
             &copy; Rede Brasil Drugstore -
             {' '}
