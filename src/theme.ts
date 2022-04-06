@@ -1,32 +1,48 @@
 import { createTheme } from '@mui/material/styles';
-import { green, grey, red } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
+
+declare module '@mui/material/styles' {
+  interface Theme {
+    muikit: {
+      one: string;
+      two: string;
+      three: string;
+      four: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    muikit?: {
+      one?: string;
+      two?: string;
+      three?: string;
+      four?: string;
+    };
+  }
+}
 
 const rawTheme = createTheme({
   palette: {
     primary: {
-      light: '#69696a',
-      main: '#28282a',
-      dark: '#1e1e1f',
+      light: '#F00118',
+      main: '#F00118',
+      dark: '#F00118',
     },
     secondary: {
-      light: '#fff5f8',
-      main: '#ff3366',
-      dark: '#e62958',
+      light: '#FFC61D',
+      main: '#FFC61D',
+      dark: '#FFC61D',
     },
-    warning: {
-      main: '#ffc071',
-      dark: '#ffb25e',
+    text: {
+      primary: '#F4F6F7',
+      secondary: '#888888',
     },
-    error: {
-      light: red[50],
-      main: red[500],
-      dark: red[700],
-    },
-    success: {
-      light: green[50],
-      main: green[500],
-      dark: green[700],
-    },
+  },
+  muikit: {
+    one: '#F4F6F7',
+    two: '#888888',
+    three: '#4F4F4F',
+    four: '#24252D',
   },
   typography: {
     fontFamily: "'Work Sans', sans-serif",
@@ -48,6 +64,11 @@ const theme = {
   ...rawTheme,
   palette: {
     ...rawTheme.palette,
+    text: {
+      ...rawTheme.palette.text,
+      tertiary: '#4F4F4F',
+      quaternary: '#24252D',
+    },
     background: {
       ...rawTheme.palette.background,
       default: rawTheme.palette.common.white,
