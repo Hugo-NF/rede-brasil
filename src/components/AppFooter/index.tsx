@@ -29,16 +29,13 @@ const AppFooter = () => (
       <Grid container spacing={4}>
         {/* Logo grid - first column */}
         <Grid item xs={12} sm={4} xl={3}>
-          <ColumnGrid
-            container
-            spacing={2}
-          >
+          <ColumnGrid container>
             <Grid item sx={{ display: 'flex' }}>
               <Typography
                 variant="h6"
                 noWrap
                 component="div"
-                sx={{ mr: 2, display: 'flex' }}
+                sx={{ display: 'flex' }}
               >
                 LOGO
               </Typography>
@@ -47,9 +44,7 @@ const AppFooter = () => (
         </Grid>
         {/* Navitems grid - second column */}
         <Grid item xs={12} sm={8} xl={6}>
-          <NavitemsGrid
-            container
-          >
+          <NavitemsGrid container>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -62,10 +57,7 @@ const AppFooter = () => (
         </Grid>
         {/* Order button grid - third column */}
         <Grid item xs={12} sm={6} xl={3}>
-          <ColumnGrid
-            container
-            spacing={2}
-          >
+          <ColumnGrid container>
             <Grid item sx={{ display: 'flex' }}>
               <Button variant="outlined" color="secondary">Faça seu pedido</Button>
             </Grid>

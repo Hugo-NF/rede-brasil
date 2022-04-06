@@ -37,7 +37,7 @@ const styles = (theme: Theme) => ({
   },
 } as const);
 
-const Transition = (props: TransitionProps & { children: React.ReactElement<any, any> }) => <Slide {...props} direction="down" />;
+const Transition = (props: TransitionProps & { children: React.ReactElement<string | React.JSXElementConstructor<unknown>, string | React.JSXElementConstructor<unknown>> }) => <Slide {...props} direction="down" />;
 
 interface ExtraSnackbarProps {
   closeFunc?: () => void;
