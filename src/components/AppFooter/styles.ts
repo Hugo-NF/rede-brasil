@@ -7,7 +7,21 @@ export const ColumnGrid = styled(Grid)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: auto;
   height: 80px;
+`;
+
+export const NavitemsGrid = styled(Grid)`
+  display: flex;
+  background-color: blue;
+  flex: 1;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+  overflow: auto;
 `;
 
 export const FooterContainer = styled(Container)`

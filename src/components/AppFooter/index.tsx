@@ -14,10 +14,11 @@ import {
 import {
   ColumnGrid,
   FooterContainer,
+  NavitemsGrid,
   SocialMediaRow,
 } from './styles';
 
-const pages = ['Home', 'Sobre Nós', 'Unidades', 'Contato'];
+const pages = ['Home', 'Sobre Nós', 'Unidades', 'Clientes', 'Juridico', 'Contato'];
 
 const AppFooter = () => (
   <Typography
@@ -27,7 +28,7 @@ const AppFooter = () => (
     <FooterContainer sx={{ my: 2, display: 'flex' }}>
       <Grid container spacing={4}>
         {/* Logo grid - first column */}
-        <Grid item xs={12} sm={4} xl={4}>
+        <Grid item xs={12} sm={4} xl={3}>
           <ColumnGrid
             container
             spacing={2}
@@ -45,25 +46,22 @@ const AppFooter = () => (
           </ColumnGrid>
         </Grid>
         {/* Navitems grid - second column */}
-        <Grid item xs={12} sm={8} xl={4}>
-          <ColumnGrid
+        <Grid item xs={12} sm={8} xl={6}>
+          <NavitemsGrid
             container
-            spacing={2}
           >
-            <Grid item sx={{ display: 'flex' }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  sx={{ my: 3, color: 'text.primary', display: 'block' }}
-                >
-                  {page}
-                </Button>
-              ))}
-            </Grid>
-          </ColumnGrid>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                sx={{ color: 'text.primary' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </NavitemsGrid>
         </Grid>
         {/* Order button grid - third column */}
-        <Grid item xs={12} sm={6} xl={4}>
+        <Grid item xs={12} sm={6} xl={3}>
           <ColumnGrid
             container
             spacing={2}
