@@ -1,7 +1,6 @@
 import {
   Button,
   ButtonGroup,
-  Container,
   Grid,
   IconButton,
   Typography,
@@ -14,6 +13,7 @@ import {
 
 import {
   ColumnGrid,
+  FooterContainer,
   SocialMediaRow,
 } from './styles';
 
@@ -22,9 +22,9 @@ const pages = ['Home', 'Sobre Nós', 'Unidades', 'Contato'];
 const AppFooter = () => (
   <Typography
     component="footer"
-    sx={{ display: 'flex', bgcolor: 'primary.main' }}
+    sx={{ display: 'flex', bgcolor: 'primary.main', justifyContent: 'center' }}
   >
-    <Container sx={{ my: 2, display: 'flex' }}>
+    <FooterContainer sx={{ my: 2, display: 'flex' }}>
       <Grid container spacing={4}>
         {/* Logo grid - first column */}
         <Grid item xs={12} sm={4} xl={4}>
@@ -106,7 +106,7 @@ const AppFooter = () => (
           </ButtonGroup>
         </SocialMediaRow>
       </Grid>
-    </Container>
+    </FooterContainer>
   </Typography>
 );
 

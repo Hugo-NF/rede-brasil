@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import styled from '@emotion/styled';
 
 export const ColumnGrid = styled(Grid)`
@@ -8,6 +8,11 @@ export const ColumnGrid = styled(Grid)`
   align-items: center;
   justify-content: center;
   height: 80px;
+`;
+
+export const FooterContainer = styled(Container)`
+  display: flex;
+  margin: 2px 0px; 
 `;
 
 export const SocialMediaRow = styled(Grid)`
