@@ -86,7 +86,7 @@ const AppFooter = () => (
             <IconButton
               aria-label="instagram"
               size="large"
-              href="https://facebook.com"
+              href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"
