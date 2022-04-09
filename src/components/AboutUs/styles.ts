@@ -20,9 +20,11 @@ export const AboutUsGrid = styled(Grid)`
 
 export const Title = styled(Typography)`
   color: black;
+  margin: 10px 0px;
 `;
 
 export const AboutUsText = styled(Typography)`
   font-weight: 400;
   font-size: 18px;
+  margin: 10px 0px;
 `;
