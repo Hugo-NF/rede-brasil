@@ -1,5 +1,4 @@
-import Button from '../Button';
-import Typography from '../Typography';
+import { Typography } from '@mui/material';
 import ProductHeroLayout from './layout';
 
 import { Images } from '../../constants';
@@ -18,7 +17,7 @@ const ProductHero = () => (
       src={Images.HeroCover}
       alt="increase priority"
     />
-    <Typography color="inherit" align="center" variant="h2" marked="center">
+    <Typography color="inherit" align="center" variant="h2">
       What is Lorem Ipsum?
     </Typography>
     <Typography
@@ -29,16 +28,6 @@ const ProductHero = () => (
     >
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </Typography>
-    <Button
-      color="secondary"
-      variant="contained"
-      size="large"
-      component="a"
-      href="/premium-themes/onepirate/sign-up/"
-      sx={{ minWidth: 200 }}
-    >
-      Discover the experience
-    </Button>
   </ProductHeroLayout>
 );
 
