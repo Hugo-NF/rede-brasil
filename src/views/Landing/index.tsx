@@ -15,7 +15,7 @@ const Landing = () => {
   return (
     <>
       <AppBar refs={[ProductHeroRef, UnitsRef]} />
-      <ProductHero ref={ProductHeroRef} />
+      <ProductHero ref={ProductHeroRef} nextSessionRef={UnitsRef} />
       {/* <ProductCTA /> */}
       {/* <ProductCategories /> */}
       {/* <ProductSmokingHero /> */}

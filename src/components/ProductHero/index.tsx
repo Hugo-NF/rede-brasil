@@ -1,36 +1,45 @@
-import { forwardRef, Ref } from 'react';
-import { Typography } from '@mui/material';
+import { forwardRef, Ref, RefObject } from 'react';
+import { Typography, useTheme } from '@mui/material';
 import ProductHeroLayout from './layout';
 
 import { Images } from '../../constants';
 
-const ProductHero = forwardRef((_, ref: Ref<HTMLElement> | undefined) => (
-  <ProductHeroLayout
-    ref={ref}
-    sxBackground={{
-      backgroundImage: `url(${Images.HeroCover})`,
-      backgroundColor: '#d3dadb', // Average color of the background image.
-      backgroundPosition: 'center',
-    }}
-  >
-    {/* Increase the network loading priority of the background image. */}
-    <img
-      style={{ display: 'none' }}
-      src={Images.HeroCover}
-      alt="increase priority"
-    />
-    <Typography color="inherit" align="center" variant="h2">
-      What is Lorem Ipsum?
-    </Typography>
-    <Typography
-      color="inherit"
-      align="center"
-      variant="h5"
-      sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
+export interface ProductHeroProps {
+  nextSessionRef: RefObject<HTMLInputElement>;
+}
+
+const ProductHero = forwardRef(({ nextSessionRef }: ProductHeroProps, ref: Ref<HTMLElement> | undefined) => {
+  const { palette } = useTheme();
+
+  return (
+    <ProductHeroLayout
+      ref={ref}
+      nextSessionRef={nextSessionRef}
+      sxBackground={{
+        backgroundImage: `url(${Images.HeroCover})`,
+        backgroundColor: palette.background.default, // Average color of the background image.
+        backgroundPosition: 'center',
+      }}
     >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    </Typography>
-  </ProductHeroLayout>
-));
+      {/* Increase the network loading priority of the background image. */}
+      <img
+        style={{ display: 'none' }}
+        src={Images.HeroCover}
+        alt="increase priority"
+      />
+      <Typography color="inherit" align="center" variant="h2">
+        What is Lorem Ipsum?
+      </Typography>
+      <Typography
+        color="inherit"
+        align="center"
+        variant="h5"
+        sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </Typography>
+    </ProductHeroLayout>
+  );
+});
 
 export default ProductHero;

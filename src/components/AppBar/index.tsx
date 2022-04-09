@@ -38,7 +38,7 @@ const ResponsiveAppBar = ({ refs }: ResponsiveAppBarProps) => {
   }, []);
 
   return (
-    <StyledAppBar position="static" sx={{ maxHeight: 80 }}>
+    <StyledAppBar position="sticky" sx={{ maxHeight: 80 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Desktop Logo */}
@@ -80,10 +80,7 @@ const ResponsiveAppBar = ({ refs }: ResponsiveAppBarProps) => {
                   {pages.map((page, index) => (
                     <Fragment key={page}>
                       <ListItem
-                        onClick={() => {
-                          setDrawerOpen(false);
-                          handleScroll(refs[index]);
-                        }}
+                        onClick={() => handleScroll(refs[index])}
                       >
                         <Typography textAlign="center" color="text.secondary">{page}</Typography>
                       </ListItem>
