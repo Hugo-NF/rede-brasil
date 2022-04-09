@@ -12,6 +12,7 @@ import {
   Instagram as InstagramIcon,
 } from '@mui/icons-material';
 
+import { Images } from '../../constants';
 import {
   ColumnGrid,
   FooterContainer,
@@ -48,7 +49,7 @@ const AppFooter = ({ pages, refs }: AppFooterProps) => {
                   component="div"
                   sx={{ display: 'flex' }}
                 >
-                  LOGO
+                  <img src={Images.Logo} height={45} width="auto" alt="brand logo" />
                 </Typography>
               </Grid>
             </ColumnGrid>

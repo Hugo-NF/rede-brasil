@@ -20,6 +20,7 @@ import {
 
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
+import { Images } from '../../constants';
 
 export interface ResponsiveAppBarProps {
   pages: Array<string>;
@@ -47,7 +48,7 @@ const ResponsiveAppBar = ({ pages, refs }: ResponsiveAppBarProps) => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            <img src={Images.Logo} height={45} width="auto" alt="brand logo" />
           </Typography>
 
           {/* Mobile drawer */}
@@ -98,7 +99,7 @@ const ResponsiveAppBar = ({ pages, refs }: ResponsiveAppBarProps) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            <img src={Images.Logo} height={45} width="auto" alt="brand logo" />
           </Typography>
 
           {/* Desktop pages bar */}
