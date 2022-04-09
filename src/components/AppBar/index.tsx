@@ -1,4 +1,6 @@
-import { Fragment, useState } from 'react';
+import {
+  Fragment, RefObject, useCallback, useState,
+} from 'react';
 import {
   Box,
   Button,
@@ -19,11 +21,21 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
 
-const pages = ['Home', 'Sobre Nós', 'Unidades', 'Contato'];
+const pages = ['Início', 'Unidades'];
 
-const ResponsiveAppBar = () => {
+export interface ResponsiveAppBarProps {
+  refs: Array<RefObject<HTMLInputElement>>
+}
+
+const ResponsiveAppBar = ({ refs }: ResponsiveAppBarProps) => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+
+  const handleScroll = useCallback((ref: RefObject<HTMLInputElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+  }, []);
 
   return (
     <StyledAppBar position="static" sx={{ maxHeight: 80 }}>
@@ -65,10 +77,15 @@ const ResponsiveAppBar = () => {
               <DrawerBoxContent>
                 <Button variant="contained" color="secondary" onClick={() => setDialogOpen(true)}>Compre Agora</Button>
                 <DrawerPageList>
-                  {pages.map((page) => (
+                  {pages.map((page, index) => (
                     <Fragment key={page}>
-                      <ListItem onClick={() => setDrawerOpen(false)}>
-                        <Typography textAlign="center">{page}</Typography>
+                      <ListItem
+                        onClick={() => {
+                          setDrawerOpen(false);
+                          handleScroll(refs[index]);
+                        }}
+                      >
+                        <Typography textAlign="center" color="text.secondary">{page}</Typography>
                       </ListItem>
                       <Divider />
                     </Fragment>
@@ -96,10 +113,11 @@ const ResponsiveAppBar = () => {
               justifyContent: 'center',
             }}
           >
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
                 key={page}
                 sx={{ my: 3, color: 'white', display: 'block' }}
+                onClick={() => handleScroll(refs[index])}
               >
                 {page}
               </Button>

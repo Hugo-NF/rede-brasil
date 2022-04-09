@@ -1,7 +1,9 @@
+import { forwardRef } from 'react';
 import {
   Box,
   Grid,
 } from '@mui/material';
+
 import { Images } from '../../constants';
 
 import ImageCard from '../ImageCard';
@@ -40,10 +42,11 @@ const units = [
   },
 ];
 
-const ProductUnits = () => (
+const Units = forwardRef((_, ref) => (
   <Box
+    ref={ref}
     component="section"
-    sx={{ display: 'flex', bgcolor: 'background.main', overflow: 'hidden' }}
+    sx={{ display: 'flex', bgcolor: 'background.main' }}
   >
     <UnitsContainer>
       <Title variant="h4">
@@ -51,7 +54,7 @@ const ProductUnits = () => (
       </Title>
       <Grid container spacing={4}>
         {units.map((unit) => (
-          <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
+          <Grid key={unit.title} item xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
             <ImageCard
               src={unit.src}
               title={unit.title}
@@ -66,6 +69,6 @@ const ProductUnits = () => (
       </Grid>
     </UnitsContainer>
   </Box>
-);
+));
 
-export default ProductUnits;
+export default Units;

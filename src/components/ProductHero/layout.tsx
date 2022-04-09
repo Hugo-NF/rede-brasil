@@ -34,8 +34,8 @@ interface ProductHeroLayoutProps {
   sxBackground: SxProps<Theme>;
 }
 
-const ProductHeroLayout = ({ sxBackground, children }: React.HTMLAttributes<HTMLDivElement> & ProductHeroLayoutProps) => (
-  <ProductHeroLayoutRoot>
+const ProductHeroLayout = React.forwardRef(({ sxBackground, children }: React.HTMLAttributes<HTMLDivElement> & ProductHeroLayoutProps, ref: React.LegacyRef<HTMLElement> | undefined) => (
+  <ProductHeroLayoutRoot ref={ref}>
     <Container
       sx={{
         mt: 3,
@@ -46,22 +46,10 @@ const ProductHeroLayout = ({ sxBackground, children }: React.HTMLAttributes<HTML
       }}
     >
       {children}
-      <Box
-        sx={{
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          backgroundColor: 'common.black',
-          opacity: 0.5,
-          zIndex: -1,
-        }}
-      />
       <Background sx={sxBackground} />
       <ArrowDownIcon fontSize="large" sx={{ position: 'absolute', bottom: 32 }} />
     </Container>
   </ProductHeroLayoutRoot>
-);
+));
 
 export default ProductHeroLayout;

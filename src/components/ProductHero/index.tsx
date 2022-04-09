@@ -1,10 +1,12 @@
+import { forwardRef, Ref } from 'react';
 import { Typography } from '@mui/material';
 import ProductHeroLayout from './layout';
 
 import { Images } from '../../constants';
 
-const ProductHero = () => (
+const ProductHero = forwardRef((_, ref: Ref<HTMLElement> | undefined) => (
   <ProductHeroLayout
+    ref={ref}
     sxBackground={{
       backgroundImage: `url(${Images.HeroCover})`,
       backgroundColor: '#d3dadb', // Average color of the background image.
@@ -29,6 +31,6 @@ const ProductHero = () => (
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </Typography>
   </ProductHeroLayout>
-);
+));
 
 export default ProductHero;
