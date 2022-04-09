@@ -21,13 +21,12 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
 
-const pages = ['Início', 'Unidades'];
-
 export interface ResponsiveAppBarProps {
-  refs: Array<RefObject<HTMLInputElement>>
+  pages: Array<string>;
+  refs: Array<RefObject<HTMLInputElement>>;
 }
 
-const ResponsiveAppBar = ({ refs }: ResponsiveAppBarProps) => {
+const ResponsiveAppBar = ({ pages, refs }: ResponsiveAppBarProps) => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 

@@ -8,20 +8,22 @@ import Units from '../../components/Units';
 // import ProductSmokingHero from '../ProductSmokingHero';
 // import ProductValues from '../ProductValues';
 
+const pages = ['Início', 'Unidades'];
+
 const Landing = () => {
   const ProductHeroRef = useRef<HTMLInputElement>(null);
   const UnitsRef = useRef<HTMLInputElement>(null);
 
   return (
     <>
-      <AppBar refs={[ProductHeroRef, UnitsRef]} />
+      <AppBar pages={pages} refs={[ProductHeroRef, UnitsRef]} />
       <ProductHero ref={ProductHeroRef} nextSessionRef={UnitsRef} />
       {/* <ProductCTA /> */}
       {/* <ProductCategories /> */}
       {/* <ProductSmokingHero /> */}
       {/* <ProductValues /> */}
       <Units ref={UnitsRef} />
-      <AppFooter />
+      <AppFooter pages={pages} refs={[ProductHeroRef, UnitsRef]} />
     </>
   );
 };
