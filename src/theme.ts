@@ -37,9 +37,12 @@ const rawTheme = createTheme({
       primary: '#F4F6F7',
       secondary: '#888888',
     },
+    background: {
+      default: '#F4F6F7',
+    },
   },
   muikit: {
-    one: '#F4F6F7',
+    one: '#E3E1E3',
     two: '#888888',
     three: '#4F4F4F',
     four: '#24252D',
@@ -57,7 +60,6 @@ const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
   fontFamily: "'Roboto Condensed', sans-serif",
-  textTransform: 'uppercase',
 };
 
 const theme = {
