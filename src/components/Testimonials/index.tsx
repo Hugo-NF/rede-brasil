@@ -37,7 +37,7 @@ const SocialMedia = forwardRef((_, ref) => {
       sx={{ bgcolor: palette.primary.main }}
     >
       <TestimonialsContainer>
-        <Title variant="h4" gutterBottom m={5}>
+        <Title variant="h4">
           Clientes que confiam na Rede Brasil
         </Title>
         <CarouselContainer

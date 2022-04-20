@@ -1,4 +1,6 @@
-import { Container, Avatar, useTheme } from '@mui/material';
+import {
+  Container, Avatar, useTheme, useMediaQuery,
+} from '@mui/material';
 
 import {
   CardContainer,
@@ -17,10 +19,15 @@ const TestimonialCard = ({
   name,
   text,
 }: ITestimonialCardProps) => {
-  const { palette } = useTheme();
+  const { breakpoints, palette } = useTheme();
+  const matches = useMediaQuery(breakpoints.up('sm'));
 
   return (
-    <CardContainer elevation={0} sx={{ backgroundColor: palette.primary.main }}>
+    <CardContainer
+      elevation={0}
+      dir={matches ? 'row' : 'column'}
+      sx={{ backgroundColor: palette.primary.main }}
+    >
       <Avatar sx={{ width: 200, height: 200 }} src={image} />
       <Container>
         <HeadingText variant="h2">{name}</HeadingText>

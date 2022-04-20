@@ -3,6 +3,7 @@ import { Card, Typography } from '@mui/material';
 
 export const CardContainer = styled(Card)`
   display: flex;
+  flex-direction: ${(props) => (props.dir)};
   flex: 1;
   padding: 10px 80px;
   min-width: 288px,
