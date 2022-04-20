@@ -34,7 +34,7 @@ const SocialMedia = forwardRef((_, ref) => {
     <Box
       ref={ref}
       component="section"
-      sx={{ bgcolor: palette.primary.main }}
+      sx={{ paddingY: 10, bgcolor: palette.primary.main }}
     >
       <TestimonialsContainer>
         <Title variant="h4">

@@ -28,7 +28,7 @@ const TestimonialCard = ({
       dir={matches ? 'row' : 'column'}
       sx={{ backgroundColor: palette.primary.main }}
     >
-      <Avatar sx={{ width: 200, height: 200 }} src={image} />
+      <Avatar sx={{ margin: 2, width: 196, height: 196 }} src={image} />
       <Container>
         <HeadingText variant="h2">{name}</HeadingText>
         <Text variant="body1">{text}</Text>

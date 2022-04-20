@@ -8,7 +8,6 @@ export const CarouselContainer = styled(Carousel)`
 
 export const TestimonialsContainer = styled(Container)`
   flex: 1;
-  padding: 50px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
