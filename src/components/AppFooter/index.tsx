@@ -88,18 +88,17 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
               <IconButton
                 aria-label="facebook"
                 size="large"
-                href="https://facebook.com"
+                href="https://www.facebook.com/redebrasildrugstore"
                 target="_blank"
                 rel="noopener noreferrer"
                 color="inherit"
               >
                 <FacebookIcon fontSize="inherit" />
               </IconButton>
-
               <IconButton
                 aria-label="instagram"
                 size="large"
-                href="https://instagram.com"
+                href="https://www.instagram.com/redebrasildrugstore/"
                 target="_blank"
                 rel="noopener noreferrer"
                 color="inherit"
