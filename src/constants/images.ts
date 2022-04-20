@@ -5,6 +5,8 @@ import SocialMedia from '../assets/socialmedia.png';
 import AsaSulUnit from '../assets/asasul-unit.png';
 import SamambaiaUnit from '../assets/samambaia-unit.png';
 import SuperbomUnit from '../assets/superbom-unit.png';
+import LeftArrowIcon from '../assets/left-arrow.svg';
+import RightArrowIcon from '../assets/right-arrow.svg';
 
 export {
   HeroCover,
@@ -14,4 +16,6 @@ export {
   AsaSulUnit,
   SamambaiaUnit,
   SuperbomUnit,
+  LeftArrowIcon,
+  RightArrowIcon,
 };

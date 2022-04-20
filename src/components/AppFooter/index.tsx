@@ -20,12 +20,12 @@ import {
   SocialMediaRow,
 } from './styles';
 
-export interface AppFooterProps {
+export interface IAppFooterProps {
   pages: Array<string>;
   refs: Array<RefObject<HTMLInputElement>>;
 }
 
-const AppFooter = ({ pages, refs }: AppFooterProps) => {
+const AppFooter = ({ pages, refs }: IAppFooterProps) => {
   const handleScroll = useCallback((ref: RefObject<HTMLInputElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });

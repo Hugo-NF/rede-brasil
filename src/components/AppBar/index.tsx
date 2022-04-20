@@ -22,12 +22,12 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
 import { Images } from '../../constants';
 
-export interface ResponsiveAppBarProps {
+export interface IResponsiveAppBarProps {
   pages: Array<string>;
   refs: Array<RefObject<HTMLInputElement>>;
 }
 
-const ResponsiveAppBar = ({ pages, refs }: ResponsiveAppBarProps) => {
+const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 

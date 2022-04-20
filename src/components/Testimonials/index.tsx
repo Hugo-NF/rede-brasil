@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
 import {
   Box,
-  Paper,
-  Typography,
-  // useTheme,
+  useTheme,
 } from '@mui/material';
+
+import TestimonialCard from '../TestimonialCard';
 
 import {
   CarouselContainer,
@@ -12,54 +12,51 @@ import {
   Title,
 } from './styles';
 
-// import { Images } from '../../constants';
+import { Images } from '../../constants';
 
 const items = [
   {
+    image: 'https://i.pravatar.cc/400',
     name: 'Hugo Fonseca',
-    description: 'Salve',
+    description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
   },
   {
-    name: 'Matheus',
-    description: 'Salve',
+    image: 'https://i.pravatar.cc/300',
+    name: 'Carine Rocha',
+    description: ' If you use this site regularly and would like to help keep the site on the Internet, please consider donating a small sum to help pay for the hosting and bandwidth bill. There is no minimum donation, any sum is appreciated - click here to donate using PayPal. Thank you for your support.',
   },
 ];
 
-const SocialMedia = forwardRef((_, ref) => (
-  <Box
-    ref={ref}
-    component="section"
-    sx={{ bgcolor: 'red' }}
-  >
-    <TestimonialsContainer>
-      <Title variant="h4" gutterBottom m={5}>
-        Clientes que confiam na Rede Brasil
-      </Title>
-      <CarouselContainer
-        interval={5000}
-        indicatorContainerProps={{
-          style: {
-            alignSelf: 'flex-end',
-            justifySelf: 'center',
-          },
-        }}
-      >
-        {items.map((item) => (
-          <Paper sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            width: '100%',
-            height: 250,
-            backgroundColor: 'green',
+const SocialMedia = forwardRef((_, ref) => {
+  const { palette } = useTheme();
+
+  return (
+    <Box
+      ref={ref}
+      component="section"
+      sx={{ bgcolor: palette.primary.main }}
+    >
+      <TestimonialsContainer>
+        <Title variant="h4" gutterBottom m={5}>
+          Clientes que confiam na Rede Brasil
+        </Title>
+        <CarouselContainer
+          interval={10000}
+          fullHeightHover={false}
+          navButtonsProps={{
+            style: {
+              backgroundColor: 'transparent',
+              borderRadius: 0,
+            },
           }}
-          >
-            <Typography variant="h2">{item.name}</Typography>
-            <Typography variant="body2">{item.description}</Typography>
-          </Paper>
-        ))}
-      </CarouselContainer>
-    </TestimonialsContainer>
-  </Box>
-));
+          NextIcon={<img src={Images.RightArrowIcon} width={48} height={48} alt="next icon" />}
+          PrevIcon={<img src={Images.LeftArrowIcon} width={48} height={48} alt="prev icon" />}
+        >
+          {items.map((item) => <TestimonialCard key={item.name} image="https://i.pravatar.cc/300" name={item.name} text={item.description} />)}
+        </CarouselContainer>
+      </TestimonialsContainer>
+    </Box>
+  );
+});
 
 export default SocialMedia;

@@ -15,7 +15,7 @@ import {
 
 import { CardContainer } from './styles';
 
-export interface ImageCardProps {
+export interface IImageCardProps {
   src: string;
   title: string;
   address: string;
@@ -33,7 +33,7 @@ const ImageCard = ({
   whatsappPhone,
   message,
   locationUrl,
-}: ImageCardProps) => {
+}: IImageCardProps) => {
   const { palette } = useTheme();
 
   return (

@@ -4,11 +4,11 @@ import ProductHeroLayout from './layout';
 
 import { Images } from '../../constants';
 
-export interface ProductHeroProps {
+export interface IProductHeroProps {
   nextSessionRef: RefObject<HTMLInputElement>;
 }
 
-const ProductHero = forwardRef(({ nextSessionRef }: ProductHeroProps, ref: Ref<HTMLElement> | undefined) => {
+const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<HTMLElement> | undefined) => {
   const { palette } = useTheme();
 
   return (
