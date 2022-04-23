@@ -24,7 +24,7 @@ const SocialMedia = forwardRef((_, ref) => {
     <Box
       ref={ref}
       component="section"
-      sx={{ display: 'flex', bgcolor: palette.primary.main }}
+      sx={{ display: 'flex', bgcolor: palette.primary.dark }}
     >
       <SocialMediaContainer>
         <Grid
