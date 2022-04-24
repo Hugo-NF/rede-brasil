@@ -1,15 +1,11 @@
 import {
-  Fragment, RefObject, useCallback, useState,
+  Fragment, RefObject, useCallback, useState, useRef, ElementRef,
 } from 'react';
+
 import {
   Box,
   Button,
   Container,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   Divider,
   IconButton,
   ListItem,
@@ -19,6 +15,9 @@ import {
 } from '@mui/material';
 
 import { Menu as MenuIcon } from '@mui/icons-material';
+
+import MarketplaceDialog from '../MarketplaceDialog';
+
 import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
 import { Images } from '../../constants';
 
@@ -29,7 +28,7 @@ export interface IResponsiveAppBarProps {
 
 const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const dialogRef = useRef<ElementRef<typeof MarketplaceDialog>>(null);
 
   const handleScroll = useCallback((ref: RefObject<HTMLInputElement>) => {
     if (ref.current) {
@@ -40,6 +39,8 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
   return (
     <StyledAppBar position="sticky" sx={{ maxHeight: 80 }}>
       <Container maxWidth="xl">
+        {/* Absolute position elements */}
+        <MarketplaceDialog ref={dialogRef} />
         <Toolbar disableGutters>
           {/* Desktop Logo */}
           <Typography
@@ -75,7 +76,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               }}
             >
               <DrawerBoxContent>
-                <Button variant="contained" color="secondary" onClick={() => setDialogOpen(true)}>Compre Agora</Button>
+                <Button variant="contained" color="secondary" onClick={() => dialogRef.current?.openDialog()}>Compre Agora</Button>
                 <DrawerPageList>
                   {pages.map((page, index) => (
                     <Fragment key={page}>
@@ -126,34 +127,11 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
             <Button
               variant="contained"
               color="secondary"
-              onClick={() => setDialogOpen(true)}
+              onClick={() => dialogRef.current?.openDialog()}
               sx={{ display: { xs: 'none', md: 'block' } }}
             >
               Compre Agora
             </Button>
-            <Dialog
-              open={dialogOpen}
-              onClose={() => setDialogOpen(false)}
-              maxWidth="md"
-            >
-              <DialogTitle>
-                Comprar
-              </DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content here&apos;,
-                  making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-                  and a search for &apos;lorem ipsum&apos; will uncover many web sites still in their infancy. Various versions have evolved over the years,
-                  sometimes by accident, sometimes on purpose (injected humour and the like).
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button autoFocus onClick={() => setDialogOpen(false)}>
-                  Cancelar
-                </Button>
-              </DialogActions>
-            </Dialog>
           </Box>
         </Toolbar>
       </Container>
