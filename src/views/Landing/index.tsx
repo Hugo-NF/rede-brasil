@@ -7,29 +7,25 @@ import SocialMedia from '../../components/SocialMedia';
 import Testimonials from '../../components/Testimonials';
 import VideoDisplay from '../../components/VideoDisplay';
 import Units from '../../components/Units';
-// import ProductSmokingHero from '../ProductSmokingHero';
-// import ProductCategories from '../ProductCategories';
-// import ProductValues from '../ProductValues';
 
-const pages = ['Início', 'Sobre Nós', 'Vídeo', 'Midias Sociais', 'Depoimentos', 'Unidades'];
+// Home, Sobre Nós, Unidades, Avaliações e Fale Conosco
+const pages = ['Home', 'Sobre Nós', 'Avaliações', 'Unidades'];
 
 const Landing = () => {
   const ProductHeroRef = useRef<HTMLInputElement>(null);
   const AboutUsRef = useRef<HTMLInputElement>(null);
-  const VideoDisplayRef = useRef<HTMLInputElement>(null);
-  const SocialMediaRef = useRef<HTMLInputElement>(null);
   const TestimonialsRef = useRef<HTMLInputElement>(null);
   const UnitsRef = useRef<HTMLInputElement>(null);
 
-  const refs = [ProductHeroRef, AboutUsRef, VideoDisplayRef, SocialMediaRef, TestimonialsRef, UnitsRef];
+  const refs = [ProductHeroRef, AboutUsRef, TestimonialsRef, UnitsRef];
 
   return (
     <>
       <AppBar pages={pages} refs={refs} />
       <ProductHero ref={ProductHeroRef} nextSessionRef={AboutUsRef} />
       <AboutUs ref={AboutUsRef} />
-      <VideoDisplay ref={VideoDisplayRef} />
-      <SocialMedia ref={SocialMediaRef} />
+      <VideoDisplay />
+      <SocialMedia />
       <Testimonials ref={TestimonialsRef} />
       {/* <ProductCategories /> */}
       {/* <ProductValues /> */}
