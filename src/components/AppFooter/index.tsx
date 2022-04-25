@@ -63,7 +63,7 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
                   onClick={() => handleScroll(refs[index])}
                   sx={{ color: 'text.primary' }}
                 >
-                  <Typography>
+                  <Typography textTransform="none">
                     {page}
                   </Typography>
                 </Button>

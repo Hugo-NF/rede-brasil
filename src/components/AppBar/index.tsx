@@ -119,7 +119,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
                 sx={{ my: 3, color: 'white', display: 'block' }}
                 onClick={() => handleScroll(refs[index])}
               >
-                <Typography>
+                <Typography textTransform="none">
                   {page}
                 </Typography>
               </Button>
@@ -129,7 +129,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
           {/* WhatsApp buy dialog */}
           <Box sx={{ flexGrow: 0 }}>
             <Button
-              variant="contained"
+              variant="outlined"
               color="secondary"
               onClick={() => dialogRef.current?.openDialog()}
               sx={{ display: { xs: 'none', md: 'block' } }}

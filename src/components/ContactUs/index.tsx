@@ -144,7 +144,7 @@ const ContactUs = forwardRef((_, ref) => {
                   variant="contained"
                   color="secondary"
                 >
-                  <Typography>Enviar</Typography>
+                  <Typography textTransform="none">Enviar</Typography>
                 </Button>
               </Grid>
             </Grid>
