@@ -29,8 +29,6 @@ const Landing = () => {
       <VideoDisplay />
       <SocialMedia />
       <Testimonials ref={TestimonialsRef} />
-      {/* <ProductCategories /> */}
-      {/* <ProductValues /> */}
       <Units ref={UnitsRef} />
       <ContactUs ref={ContactUsRef} />
       <AppFooter pages={pages} refs={refs} />

@@ -18,30 +18,30 @@ import {
 
 interface IContactUsForm {
   name: string;
-  phone: string;
   email: string;
   message: string;
 }
 
+const whatsappPhone = '+5561998062229';
+
 const ContactUs = forwardRef((_, ref) => {
   const { palette } = useTheme();
 
+  const composeMessage = useCallback((values: IContactUsForm) => encodeURI(`Nome: ${values.name}\r\nE-mail: ${values.email}\r\n\r\n${values.message}`), []);
+
   const handleSubmit = useCallback((values: IContactUsForm) => {
-    console.log(values);
+    window.open(`https://api.whatsapp.com/send?phone=${whatsappPhone}&text=${composeMessage(values)}`);
   }, []);
 
   const formik = useFormik<IContactUsForm>({
     initialValues: {
       name: '',
-      phone: '',
       email: '',
       message: '',
     },
     validationSchema: Yup.object({
       name: Yup.string()
         .required('Nome não pode estar em branco'),
-      phone: Yup.string()
-        .required('Telefone não pode estar em branco'),
       email: Yup.string()
         .email('Deve formar um e-mail válido').required('E-mail não pode estar em branco'),
       message: Yup.string()
@@ -59,25 +59,29 @@ const ContactUs = forwardRef((_, ref) => {
       sx={{ display: 'flex', bgcolor: palette.primary.dark }}
     >
       <ContactUsContainer>
-        <Typography variant="h2">Medicamentos de Alto Custo</Typography>
+        <Typography variant="h2" mb={2}>Medicamentos de Alto Custo</Typography>
         <Typography variant="body1">Deseja fazer o orçamento de algum Medicamento de Alto Custo?</Typography>
-        <Typography variant="body1">Este é o lugar certo.</Typography>
+        <Typography variant="body1" mb={5}>Este é o lugar certo.</Typography>
         <form onSubmit={formik.handleSubmit}>
           <Grid
             container
             direction="column"
             justifyContent="center"
             alignItems="center"
-            spacing={4}
           >
-            {/* Name and phone row */}
-            <Grid container columnSpacing={20} my={5}>
-              <Grid item xs={6}>
+            {/* Name and email row */}
+            <Grid
+              container
+              spacing={5}
+            >
+              <Grid item xs={12} md={6}>
                 <TextField
                   id="name"
                   label="Nome"
                   variant="standard"
                   color="secondary"
+                  placeholder="Maria"
+                  fullWidth
                   InputLabelProps={{ sx: { color: 'white' } }}
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
@@ -87,31 +91,13 @@ const ContactUs = forwardRef((_, ref) => {
                   <FormHelperText id="name-error-text" sx={{ color: 'white' }}>{formik.errors.name}</FormHelperText>
                 )}
               </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  id="phone"
-                  label="Telefone"
-                  type="tel"
-                  variant="standard"
-                  color="secondary"
-                  InputLabelProps={{ sx: { color: 'white' } }}
-                  onBlur={formik.handleBlur}
-                  onChange={formik.handleChange}
-                  value={formik.values.phone}
-                />
-                {Boolean(formik.errors.phone) && (
-                  <FormHelperText id="name-error-text" sx={{ color: 'white' }}>{formik.errors.phone}</FormHelperText>
-                )}
-              </Grid>
-            </Grid>
-            {/* E-mail row */}
-            <Grid container>
-              <Grid item xs>
+              <Grid item xs={12} md={6}>
                 <TextField
                   id="email"
                   label="E-mail"
                   variant="standard"
                   color="secondary"
+                  placeholder="seuemail@gmail.com"
                   fullWidth
                   InputLabelProps={{ sx: { color: 'white' } }}
                   onBlur={formik.handleBlur}
@@ -124,8 +110,8 @@ const ContactUs = forwardRef((_, ref) => {
               </Grid>
             </Grid>
             {/* Message row */}
-            <Grid container my={5}>
-              <Grid item xs>
+            <Grid container my={4}>
+              <Grid item xs={12}>
                 <TextField
                   id="message"
                   label="Mensagem"
@@ -134,6 +120,7 @@ const ContactUs = forwardRef((_, ref) => {
                   rows={5}
                   variant="standard"
                   color="secondary"
+                  placeholder="Ex.: Gostaria de um orçamento para..."
                   InputLabelProps={{ sx: { color: 'white' } }}
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
