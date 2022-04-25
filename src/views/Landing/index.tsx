@@ -1,23 +1,25 @@
 import { useRef } from 'react';
-import AboutUs from '../../components/AboutUs';
 import AppBar from '../../components/AppBar';
-import AppFooter from '../../components/AppFooter';
 import ProductHero from '../../components/ProductHero';
+import AboutUs from '../../components/AboutUs';
+import VideoDisplay from '../../components/VideoDisplay';
 import SocialMedia from '../../components/SocialMedia';
 import Testimonials from '../../components/Testimonials';
-import VideoDisplay from '../../components/VideoDisplay';
 import Units from '../../components/Units';
+import ContactUs from '../../components/ContactUs';
+import AppFooter from '../../components/AppFooter';
 
 // Home, Sobre Nós, Unidades, Avaliações e Fale Conosco
-const pages = ['Home', 'Sobre Nós', 'Avaliações', 'Unidades'];
+const pages = ['Home', 'Sobre Nós', 'Avaliações', 'Unidades', 'Fale Conosco'];
 
 const Landing = () => {
   const ProductHeroRef = useRef<HTMLInputElement>(null);
   const AboutUsRef = useRef<HTMLInputElement>(null);
   const TestimonialsRef = useRef<HTMLInputElement>(null);
   const UnitsRef = useRef<HTMLInputElement>(null);
+  const ContactUsRef = useRef<HTMLInputElement>(null);
 
-  const refs = [ProductHeroRef, AboutUsRef, TestimonialsRef, UnitsRef];
+  const refs = [ProductHeroRef, AboutUsRef, TestimonialsRef, UnitsRef, ContactUsRef];
 
   return (
     <>
@@ -30,6 +32,7 @@ const Landing = () => {
       {/* <ProductCategories /> */}
       {/* <ProductValues /> */}
       <Units ref={UnitsRef} />
+      <ContactUs ref={ContactUsRef} />
       <AppFooter pages={pages} refs={refs} />
     </>
   );

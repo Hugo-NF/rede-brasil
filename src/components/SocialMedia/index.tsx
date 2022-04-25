@@ -53,18 +53,6 @@ const SocialMedia = forwardRef((_, ref) => {
             <img src={Images.SocialMedia} height={matches ? 624 : 450} width="auto" alt="about us cover" />
           </Grid>
         </Grid>
-        {/* <Grid container spacing={4}>
-          {matches && (
-            <>
-              <Grid item xs={6}>
-                <Typography>Já conhece nosso Instagram?</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <img src={Images.SocialMedia} height={624} width="auto" alt="about us cover" />
-              </Grid>
-            </>
-          )}
-        </Grid> */}
       </SocialMediaContainer>
     </Box>
   );
