@@ -63,7 +63,9 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
                   onClick={() => handleScroll(refs[index])}
                   sx={{ color: 'text.primary' }}
                 >
-                  {page}
+                  <Typography>
+                    {page}
+                  </Typography>
                 </Button>
               ))}
             </NavitemsGrid>
@@ -72,7 +74,9 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
           <Grid item xs={12} sm={6} xl={3}>
             <ColumnGrid container>
               <Grid item sx={{ display: 'flex' }}>
-                <Button variant="outlined" color="secondary">Faça seu pedido</Button>
+                <Button variant="outlined" color="secondary">
+                  <Typography>Faça seu pedido</Typography>
+                </Button>
               </Grid>
             </ColumnGrid>
           </Grid>

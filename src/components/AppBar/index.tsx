@@ -76,7 +76,9 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               }}
             >
               <DrawerBoxContent>
-                <Button variant="contained" color="secondary" onClick={() => dialogRef.current?.openDialog()}>Compre Agora</Button>
+                <Button variant="contained" color="secondary" onClick={() => dialogRef.current?.openDialog()}>
+                  <Typography>Faça seu pedido</Typography>
+                </Button>
                 <DrawerPageList>
                   {pages.map((page, index) => (
                     <Fragment key={page}>
@@ -117,7 +119,9 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
                 sx={{ my: 3, color: 'white', display: 'block' }}
                 onClick={() => handleScroll(refs[index])}
               >
-                {page}
+                <Typography>
+                  {page}
+                </Typography>
               </Button>
             ))}
           </Box>
@@ -130,7 +134,9 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               onClick={() => dialogRef.current?.openDialog()}
               sx={{ display: { xs: 'none', md: 'block' } }}
             >
-              Compre Agora
+              <Typography>
+                Faça seu pedido
+              </Typography>
             </Button>
           </Box>
         </Toolbar>

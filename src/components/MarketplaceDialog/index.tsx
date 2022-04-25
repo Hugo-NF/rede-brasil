@@ -9,6 +9,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Typography,
 } from '@mui/material';
 
 export interface IMarketplaceDialogHandle {
@@ -46,7 +47,7 @@ const MarketplaceDialog = forwardRef<IMarketplaceDialogHandle, object>((_, ref) 
       </DialogContent>
       <DialogActions>
         <Button autoFocus onClick={() => setDialogOpen(false)}>
-          Cancelar
+          <Typography>Cancelar</Typography>
         </Button>
       </DialogActions>
     </Dialog>

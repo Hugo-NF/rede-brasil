@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { Container } from '@mui/material';
 
 export const ContactUsContainer = styled(Container)`
-  background-color: blue;
   display: flex;
   flex: 1;
   flex-direction: column;

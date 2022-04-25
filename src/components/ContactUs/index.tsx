@@ -2,12 +2,14 @@ import { forwardRef, useCallback } from 'react';
 import {
   Box,
   Button,
+  FormHelperText,
   Grid,
   TextField,
   Typography,
   useTheme,
 } from '@mui/material';
 
+import * as Yup from 'yup';
 import { useFormik } from 'formik';
 
 import {
@@ -35,6 +37,18 @@ const ContactUs = forwardRef((_, ref) => {
       email: '',
       message: '',
     },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .required('Nome não pode estar em branco'),
+      phone: Yup.string()
+        .required('Telefone não pode estar em branco'),
+      email: Yup.string()
+        .email('Deve formar um e-mail válido').required('E-mail não pode estar em branco'),
+      message: Yup.string()
+        // eslint-disable-next-line no-template-curly-in-string
+        .min(10, 'Mensagem deve conter pelo menos ${min} caracteres')
+        .required('Mensagem não pode estar em branco'),
+    }),
     onSubmit: handleSubmit,
   });
 
@@ -62,12 +76,16 @@ const ContactUs = forwardRef((_, ref) => {
                 <TextField
                   id="name"
                   label="Nome"
-                  type="name"
                   variant="standard"
-                  fullWidth
+                  color="secondary"
+                  InputLabelProps={{ sx: { color: 'white' } }}
+                  onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   value={formik.values.name}
                 />
+                {Boolean(formik.errors.name) && (
+                  <FormHelperText id="name-error-text" sx={{ color: 'white' }}>{formik.errors.name}</FormHelperText>
+                )}
               </Grid>
               <Grid item xs={6}>
                 <TextField
@@ -76,9 +94,14 @@ const ContactUs = forwardRef((_, ref) => {
                   type="tel"
                   variant="standard"
                   color="secondary"
+                  InputLabelProps={{ sx: { color: 'white' } }}
+                  onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   value={formik.values.phone}
                 />
+                {Boolean(formik.errors.phone) && (
+                  <FormHelperText id="name-error-text" sx={{ color: 'white' }}>{formik.errors.phone}</FormHelperText>
+                )}
               </Grid>
             </Grid>
             {/* E-mail row */}
@@ -87,13 +110,17 @@ const ContactUs = forwardRef((_, ref) => {
                 <TextField
                   id="email"
                   label="E-mail"
-                  type="email"
                   variant="standard"
                   color="secondary"
                   fullWidth
+                  InputLabelProps={{ sx: { color: 'white' } }}
+                  onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   value={formik.values.email}
                 />
+                {Boolean(formik.errors.email) && (
+                  <FormHelperText id="name-error-text" sx={{ color: 'white' }}>{formik.errors.email}</FormHelperText>
+                )}
               </Grid>
             </Grid>
             {/* Message row */}
@@ -102,26 +129,35 @@ const ContactUs = forwardRef((_, ref) => {
                 <TextField
                   id="message"
                   label="Mensagem"
-                  type="message"
                   fullWidth
                   multiline
                   rows={5}
                   variant="standard"
                   color="secondary"
+                  InputLabelProps={{ sx: { color: 'white' } }}
+                  onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   value={formik.values.message}
                 />
+                {Boolean(formik.errors.message) && (
+                  <FormHelperText id="name-error-text" sx={{ color: 'white' }}>{formik.errors.message}</FormHelperText>
+                )}
               </Grid>
             </Grid>
             {/* Submit Button row */}
-            <Grid container>
+            <Grid
+              container
+              direction="column"
+              justifyContent="center"
+              alignItems="center"
+            >
               <Grid item xs>
                 <Button
                   type="submit"
                   variant="contained"
                   color="secondary"
                 >
-                  Enviar
+                  <Typography>Enviar</Typography>
                 </Button>
               </Grid>
             </Grid>
