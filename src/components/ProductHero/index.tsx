@@ -1,4 +1,6 @@
-import { forwardRef, Ref, RefObject } from 'react';
+import {
+  forwardRef, Ref, RefObject, useEffect, useState,
+} from 'react';
 import { Typography, useTheme } from '@mui/material';
 import ProductHeroLayout from './layout';
 
@@ -8,15 +10,33 @@ export interface IProductHeroProps {
   nextSessionRef: RefObject<HTMLInputElement>;
 }
 
+const covers = [
+  {
+    image: Images.HeroCover,
+    title: 'Slide 0',
+    subtitle: 'Lorem Ipsum 0',
+  },
+];
+
 const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<HTMLElement> | undefined) => {
   const { palette } = useTheme();
+
+  const [slide, setSlide] = useState<number>(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setSlide((current: number) => (current === covers.length - 1 ? 0 : current + 1));
+    }, 10000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <ProductHeroLayout
       ref={ref}
       nextSessionRef={nextSessionRef}
       sxBackground={{
-        backgroundImage: `url(${Images.HeroCover})`,
+        backgroundImage: `url(${covers[slide].image})`,
         backgroundColor: palette.background.default, // Average color of the background image.
         backgroundPosition: 'center',
       }}
@@ -28,7 +48,7 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2">
-        What is Lorem Ipsum?
+        {covers[slide].title}
       </Typography>
       <Typography
         color="inherit"
@@ -36,7 +56,7 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        {covers[slide].subtitle}
       </Typography>
     </ProductHeroLayout>
   );
