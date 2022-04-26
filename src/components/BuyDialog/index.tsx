@@ -1,5 +1,5 @@
 import {
-  forwardRef, useState, useImperativeHandle, useCallback,
+  forwardRef, useState, useImperativeHandle, useCallback, useRef, ElementRef,
 } from 'react';
 
 import {
@@ -12,6 +12,8 @@ import {
 } from '@mui/material';
 
 import { Close as CloseIcon } from '@mui/icons-material';
+
+import MarketplaceDialog from '../MarketplaceDialog';
 
 import {
   ConfirmBtnText,
@@ -60,6 +62,7 @@ const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [selectedUnit, setSelectedUnit] = useState<string>('');
+  const marketplaceRef = useRef<ElementRef<typeof MarketplaceDialog>>(null);
 
   useImperativeHandle(ref, () => ({
     openDialog: () => setDialogOpen(true),
@@ -72,7 +75,7 @@ const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
     if (selectedUnit === '') {
       setError(true);
     } else if (selectedUnit === 'marketplace') {
-      console.log('marketplace');
+      marketplaceRef.current?.openDialog();
     } else {
       window.open(`https://api.whatsapp.com/send?phone=${UnitPhones[selectedUnit]}`);
       setDialogOpen(false);
@@ -86,6 +89,7 @@ const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
       maxWidth="md"
       fullWidth
     >
+      <MarketplaceDialog ref={marketplaceRef} />
       <IconButton
         autoFocus
         sx={{ display: 'flex', alignSelf: 'flex-end' }}
