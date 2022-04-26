@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from '@emotion/styled';
 import { DialogContent, Grid, Typography } from '@mui/material';
 
