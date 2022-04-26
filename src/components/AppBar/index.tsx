@@ -16,7 +16,7 @@ import {
 
 import { Menu as MenuIcon } from '@mui/icons-material';
 
-import MarketplaceDialog from '../MarketplaceDialog';
+import BuyDialog from '../BuyDialog';
 
 import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
 import { Images } from '../../constants';
@@ -28,7 +28,7 @@ export interface IResponsiveAppBarProps {
 
 const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const dialogRef = useRef<ElementRef<typeof MarketplaceDialog>>(null);
+  const dialogRef = useRef<ElementRef<typeof BuyDialog>>(null);
 
   const handleScroll = useCallback((ref: RefObject<HTMLInputElement>) => {
     if (ref.current) {
@@ -40,7 +40,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
     <StyledAppBar position="sticky" sx={{ maxHeight: 80 }}>
       <Container maxWidth="xl">
         {/* Absolute position elements */}
-        <MarketplaceDialog ref={dialogRef} />
+        <BuyDialog ref={dialogRef} />
         <Toolbar disableGutters>
           {/* Desktop Logo */}
           <Typography

@@ -17,3 +17,21 @@ export const DialogTitle = styled(Typography)`
   color: black;
   margin-bottom: 20px;
 `;
+
+export const ConfirmBtnText = styled(Typography)`
+  display: flex; 
+  flex: 1;
+  font-size: 18px;
+  text-transform: none;
+  font-weight: 400;
+  color: black;
+`;
+
+export const MenuOptionText = styled(Typography)`
+  display: flex; 
+  flex: 1;
+  font-size: 18px;
+  text-transform: none;
+  font-weight: 400;
+  color: black;
+`;
