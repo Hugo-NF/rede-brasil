@@ -10,11 +10,13 @@ import {
 
 import { KeyboardArrowRight as ArrowRight } from '@mui/icons-material';
 
+import { Images } from '../../constants';
+import CardShape from '../CardShape';
+
 import {
+  CardGrid,
   SocialMediaContainer,
 } from './styles';
-
-import { Images } from '../../constants';
 
 const SocialMedia = forwardRef((_, ref) => {
   const { palette, breakpoints } = useTheme();
@@ -52,6 +54,37 @@ const SocialMedia = forwardRef((_, ref) => {
           <Grid item xs={12} md={6}>
             <img src={Images.SocialMedia} height={matches ? 624 : 450} width="auto" alt="about us cover" />
           </Grid>
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          sx={{
+            backgroundColor: 'white',
+          }}
+        >
+          <CardGrid item xs={12} md={4}>
+            <CardShape
+              icon={<img src={Images.CardIcon1} alt="icon opt 0" height={32} width="auto" />}
+              title={{ text: 'Entrega', weight: 700, size: 24 }}
+              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+            />
+          </CardGrid>
+          <CardGrid item xs={12} md={4}>
+            <CardShape
+              icon={<img src={Images.CardIcon2} alt="icon opt 0" height={32} width="auto" />}
+              title={{ text: 'Descontos', weight: 700, size: 24 }}
+              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+            />
+          </CardGrid>
+          <CardGrid item xs={12} md={4}>
+            <CardShape
+              icon={<img src={Images.CardIcon3} alt="icon opt 0" height={32} width="auto" />}
+              title={{ text: 'Farmácia Popular', weight: 700, size: 24 }}
+              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+            />
+          </CardGrid>
         </Grid>
       </SocialMediaContainer>
     </Box>

@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from '@emotion/styled';
-import { Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 
 export const SocialMediaContainer = styled(Container)`
   display: flex;
@@ -9,5 +9,10 @@ export const SocialMediaContainer = styled(Container)`
   position: relative;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+`;
+
+export const CardGrid = styled(Grid)`
+  display: flex;
   justify-content: center;
 `;
