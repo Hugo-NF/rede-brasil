@@ -1,45 +1,63 @@
 import { ReactNode, MouseEventHandler } from 'react';
 import {
-  Card,
   CardContent,
   Container,
+  Grid,
   Typography,
 } from '@mui/material';
 
 import { Images } from '../../constants';
 
+import {
+  CardComponent,
+  CardGrid,
+  TextGrid,
+} from './styles';
+
+interface ITextProps {
+  text: string;
+  size: number;
+  weight: number;
+}
+
 export interface IShapeCardProps {
   icon: ReactNode;
-  text: string;
+  title: ITextProps;
+  subtitle: ITextProps;
   onClick?: MouseEventHandler<HTMLDivElement> | undefined
 }
 
 const ShapeCard = ({
   icon,
-  text,
+  title,
+  subtitle,
   onClick,
 }: IShapeCardProps) => (
-  <Card
+  <CardComponent
     elevation={0}
     sx={{
-      width: 297,
-      height: 233,
       backgroundImage: `url(${Images.BoxShape})`,
-      backgroundColor: 'transparent',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
     }}
     onClick={onClick}
   >
     <CardContent>
       <Container>
-        {icon}
-        <Typography sx={{ fontSize: 14 }} color="text.primary" gutterBottom>
-          {text}
-        </Typography>
+        <CardGrid container>
+          <Grid item xs>
+            {icon}
+          </Grid>
+          <TextGrid item xs>
+            <Typography fontSize={title.size} fontWeight={title.weight} color="text.quaternary" gutterBottom>
+              {title.text}
+            </Typography>
+            <Typography fontSize={subtitle.size} fontWeight={subtitle.weight} color="text.tertiary" gutterBottom>
+              {subtitle.text}
+            </Typography>
+          </TextGrid>
+        </CardGrid>
       </Container>
     </CardContent>
-  </Card>
+  </CardComponent>
 );
 
 export default ShapeCard;
