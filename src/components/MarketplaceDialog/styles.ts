@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from '@emotion/styled';
-import { DialogContent, Typography } from '@mui/material';
+import { DialogContent, Grid, Typography } from '@mui/material';
 
 export const DialogContentContainer = styled(DialogContent)`
   display: flex;
@@ -16,4 +16,9 @@ export const DialogTitle = styled(Typography)`
   font-weight: 700;
   color: black;
   margin-bottom: 20px;
+`;
+
+export const CardGrid = styled(Grid)`
+  display: flex;
+  justify-content: center;
 `;

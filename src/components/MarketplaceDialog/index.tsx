@@ -4,12 +4,19 @@ import {
 
 import {
   Dialog,
+  Grid,
   IconButton,
 } from '@mui/material';
 
-import { Close as CloseIcon } from '@mui/icons-material';
+import {
+  Close as CloseIcon,
+  LocalShipping as LocalShippingIcon,
+} from '@mui/icons-material';
+
+import CardShape from '../CardShape';
 
 import {
+  CardGrid,
   DialogContentContainer,
   DialogTitle,
 } from './styles';
@@ -47,6 +54,14 @@ const MarketplaceDialog = forwardRef<IMarketplaceDialogHandle, object>((_, ref) 
         <DialogTitle>
           Marketplace
         </DialogTitle>
+        <Grid container rowSpacing={2}>
+          <CardGrid item xs={12} md={6}>
+            <CardShape icon={<LocalShippingIcon />} text="Lorem Ipsum 0" onClick={() => console.log('Card press 0')} />
+          </CardGrid>
+          <CardGrid item xs={12} md={6}>
+            <CardShape icon={<LocalShippingIcon />} text="Lorem Ipsum 1" onClick={() => console.log('Card press 1')} />
+          </CardGrid>
+        </Grid>
       </DialogContentContainer>
     </Dialog>
   );

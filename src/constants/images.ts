@@ -7,6 +7,7 @@ import SamambaiaUnit from '../assets/samambaia-unit.png';
 import SuperbomUnit from '../assets/superbom-unit.png';
 import LeftArrowIcon from '../assets/left-arrow.svg';
 import RightArrowIcon from '../assets/right-arrow.svg';
+import BoxShape from '../assets/box-shape.svg';
 
 export {
   HeroCover,
@@ -18,4 +19,5 @@ export {
   SuperbomUnit,
   LeftArrowIcon,
   RightArrowIcon,
+  BoxShape,
 };
