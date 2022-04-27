@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useMemo } from 'react';
 import {
   Box,
   Button,
@@ -10,8 +10,10 @@ import {
 
 import { KeyboardArrowRight as ArrowRight } from '@mui/icons-material';
 
-import { Images } from '../../constants';
 import CardShape from '../CardShape';
+
+import useWindowSize from '../../hooks/useWindowSize';
+import { Images } from '../../constants';
 
 import {
   CardGrid,
@@ -21,6 +23,10 @@ import {
 const SocialMedia = forwardRef((_, ref) => {
   const { palette, breakpoints } = useTheme();
   const matches = useMediaQuery(breakpoints.up('md'));
+  const { width, height } = useWindowSize();
+
+  const windowWidth = useMemo(() => (width || 1920), [width]);
+  const windowHeight = useMemo(() => (height || 1080), [height]);
 
   return (
     <Box
@@ -58,33 +64,46 @@ const SocialMedia = forwardRef((_, ref) => {
         <Grid
           container
           direction="row"
-          justifyContent="space-evenly"
+          justifyContent="center"
           alignItems="center"
           sx={{
+            height: windowHeight > windowWidth ? 900 : 500,
+            borderRadius: '50%',
+            border: '5px solid white',
             backgroundColor: 'white',
+            width: windowWidth + 300,
+            marginTop: -10,
           }}
         >
-          <CardGrid item xs={12} md={4}>
-            <CardShape
-              icon={<img src={Images.CardIcon1} alt="icon opt 0" height={32} width="auto" />}
-              title={{ text: 'Entrega', weight: 700, size: 24 }}
-              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
-            />
-          </CardGrid>
-          <CardGrid item xs={12} md={4}>
-            <CardShape
-              icon={<img src={Images.CardIcon2} alt="icon opt 0" height={32} width="auto" />}
-              title={{ text: 'Descontos', weight: 700, size: 24 }}
-              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
-            />
-          </CardGrid>
-          <CardGrid item xs={12} md={4}>
-            <CardShape
-              icon={<img src={Images.CardIcon3} alt="icon opt 0" height={32} width="auto" />}
-              title={{ text: 'Farmácia Popular', weight: 700, size: 24 }}
-              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
-            />
-          </CardGrid>
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ width: '75%' }}
+          >
+            <CardGrid item xs={12} md={4}>
+              <CardShape
+                icon={<img src={Images.CardIcon1} alt="icon opt 0" height={32} width="auto" />}
+                title={{ text: 'Entrega', weight: 700, size: 24 }}
+                subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+              />
+            </CardGrid>
+            <CardGrid item xs={12} md={4}>
+              <CardShape
+                icon={<img src={Images.CardIcon2} alt="icon opt 0" height={32} width="auto" />}
+                title={{ text: 'Descontos', weight: 700, size: 24 }}
+                subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+              />
+            </CardGrid>
+            <CardGrid item xs={12} md={4}>
+              <CardShape
+                icon={<img src={Images.CardIcon3} alt="icon opt 0" height={32} width="auto" />}
+                title={{ text: 'Farmácia Popular', weight: 700, size: 24 }}
+                subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+              />
+            </CardGrid>
+          </Grid>
         </Grid>
       </SocialMediaContainer>
     </Box>
