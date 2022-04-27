@@ -80,6 +80,7 @@ const SocialMedia = forwardRef((_, ref) => {
             direction="row"
             justifyContent="center"
             alignItems="center"
+            rowSpacing={2}
             sx={{ width: '75%' }}
           >
             <CardGrid item xs={12} md={4}>
