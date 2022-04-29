@@ -15,8 +15,8 @@ const VideoDisplay = forwardRef((_, ref) => {
   const { palette } = useTheme();
   const window = useWindowSize();
 
-  const videoWidth = useMemo(() => (window.width ? window.width * 0.66 : 1280), [window]);
-  const videoHeight = useMemo(() => (window.height ? window.height * 0.66 : 720), [window]);
+  const videoWidth = useMemo(() => (window.width ? window.width * 0.6 : 1280), [window]);
+  const videoHeight = useMemo(() => (window.height ? window.height * 0.6 : 720), [window]);
 
   return (
     <VideoBox

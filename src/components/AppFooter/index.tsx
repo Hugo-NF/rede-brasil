@@ -1,4 +1,7 @@
-import { RefObject, useCallback } from 'react';
+import {
+  RefObject, ElementRef, useCallback, useRef,
+} from 'react';
+
 import {
   Button,
   ButtonGroup,
@@ -11,6 +14,8 @@ import {
   FacebookOutlined as FacebookIcon,
   Instagram as InstagramIcon,
 } from '@mui/icons-material';
+
+import BuyDialog from '../BuyDialog';
 
 import { Images } from '../../constants';
 import {
@@ -32,11 +37,14 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
     }
   }, []);
 
+  const dialogRef = useRef<ElementRef<typeof BuyDialog>>(null);
+
   return (
     <Typography
       component="footer"
       sx={{ display: 'flex', bgcolor: 'primary.main', justifyContent: 'center' }}
     >
+      <BuyDialog ref={dialogRef} />
       <FooterContainer sx={{ my: 2, display: 'flex' }}>
         <Grid container spacing={4}>
           {/* Logo grid - first column */}
@@ -74,7 +82,11 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
           <Grid item xs={12} sm={6} xl={3}>
             <ColumnGrid container>
               <Grid item sx={{ display: 'flex' }}>
-                <Button variant="outlined" color="secondary">
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  onClick={() => dialogRef.current?.openDialog()}
+                >
                   <Typography>Faça seu pedido</Typography>
                 </Button>
               </Grid>

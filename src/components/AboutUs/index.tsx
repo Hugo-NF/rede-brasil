@@ -1,9 +1,7 @@
 import { forwardRef } from 'react';
 import {
   Box,
-  Button,
   Grid,
-  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
@@ -51,9 +49,6 @@ const AboutUs = forwardRef((_, ref) => {
               Aliquam sollicitudin libero mollis neque ultricies eleifend. Vivamus consequat iaculis auctor.
               Morbi ultrices faucibus tellus, quis luctus sapien blandit sed. Nulla facilisi. Integer.
             </AboutUsText>
-            <Button variant="contained" color="secondary">
-              <Typography>Saiba Mais</Typography>
-            </Button>
           </AboutUsGrid>
         </Grid>
       </AboutUsContainer>

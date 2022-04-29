@@ -3,14 +3,23 @@ import {
 } from 'react';
 
 import {
-  Button,
   Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Typography,
+  Grid,
+  IconButton,
 } from '@mui/material';
+
+import {
+  Close as CloseIcon,
+} from '@mui/icons-material';
+
+import CardShape from '../CardShape';
+import { Images } from '../../constants';
+
+import {
+  CardGrid,
+  DialogContentContainer,
+  DialogTitle,
+} from './styles';
 
 export interface IMarketplaceDialogHandle {
   openDialog: () => void;
@@ -32,24 +41,38 @@ const MarketplaceDialog = forwardRef<IMarketplaceDialogHandle, object>((_, ref) 
       open={dialogOpen}
       onClose={() => setDialogOpen(false)}
       maxWidth="md"
+      fullWidth
     >
-      <DialogTitle>
-        Comprar
-      </DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-          The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content here&apos;,
-          making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-          and a search for &apos;lorem ipsum&apos; will uncover many web sites still in their infancy. Various versions have evolved over the years,
-          sometimes by accident, sometimes on purpose (injected humour and the like).
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button autoFocus onClick={() => setDialogOpen(false)}>
-          <Typography>Cancelar</Typography>
-        </Button>
-      </DialogActions>
+      <IconButton
+        autoFocus
+        sx={{ display: 'flex', alignSelf: 'flex-end' }}
+        onClick={() => setDialogOpen(false)}
+      >
+        <CloseIcon color="secondary" />
+      </IconButton>
+      <DialogContentContainer>
+        <DialogTitle>
+          Marketplace
+        </DialogTitle>
+        <Grid container rowSpacing={2}>
+          <CardGrid item xs={12} md={6}>
+            <CardShape
+              icon={<img src={Images.CardIcon1} alt="icon opt 0" height={64} width="auto" />}
+              title={{ text: 'Distrito Federal e Entorno', weight: 700, size: 18 }}
+              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 15 }}
+              onClick={() => console.log('Card press 0')}
+            />
+          </CardGrid>
+          <CardGrid item xs={12} md={6}>
+            <CardShape
+              icon={<img src={Images.CardIcon2} alt="icon opt 1" height={64} width="auto" />}
+              title={{ text: 'Outras Regiões', weight: 700, size: 18 }}
+              subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 15 }}
+              onClick={() => console.log('Card press 1')}
+            />
+          </CardGrid>
+        </Grid>
+      </DialogContentContainer>
     </Dialog>
   );
 });
