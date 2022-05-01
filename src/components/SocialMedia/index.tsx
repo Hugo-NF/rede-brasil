@@ -67,12 +67,12 @@ const SocialMedia = forwardRef((_, ref) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            height: windowHeight > windowWidth ? 900 : 500,
-            borderRadius: '50%',
+            height: windowHeight > windowWidth ? 1000 : 500,
+            borderRadius: '42%',
             border: '5px solid white',
             backgroundColor: 'white',
-            width: windowWidth + 300,
-            marginTop: -10,
+            width: windowWidth,
+            marginTop: -15,
           }}
         >
           <Grid
