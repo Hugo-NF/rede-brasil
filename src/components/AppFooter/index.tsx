@@ -23,6 +23,7 @@ import {
   FooterContainer,
   NavitemsGrid,
   SocialMediaRow,
+  StyledButton,
 } from './styles';
 
 export interface IAppFooterProps {
@@ -82,13 +83,14 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
           <Grid item xs={12} sm={6} xl={3}>
             <ColumnGrid container>
               <Grid item sx={{ display: 'flex' }}>
-                <Button
+                <StyledButton
                   variant="outlined"
                   color="secondary"
                   onClick={() => dialogRef.current?.openDialog()}
+                  sx={{ borderWidth: 2 }}
                 >
                   <Typography>Faça seu pedido</Typography>
-                </Button>
+                </StyledButton>
               </Grid>
             </ColumnGrid>
           </Grid>

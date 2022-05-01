@@ -22,7 +22,7 @@ const AboutUs = forwardRef((_, ref) => {
     <Box
       ref={ref}
       component="section"
-      sx={{ display: 'flex', bgcolor: 'background.main' }}
+      sx={{ display: 'flex', bgcolor: 'background.main', minHeight: '100vh' }}
     >
       <AboutUsContainer>
         <Grid container spacing={4}>

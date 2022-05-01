@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material';
+import { Button, Container, Grid } from '@mui/material';
 import styled from '@emotion/styled';
 
 export const ColumnGrid = styled(Grid)`
@@ -34,3 +34,10 @@ export const SocialMediaRow = styled(Grid)`
   align-items: center; 
   justify-content: center;
 `;
+
+export const StyledButton = styled(Button)(() => ({
+  ':hover': {
+    color: 'black',
+    backgroundColor: '#FFC61D',
+  },
+}));

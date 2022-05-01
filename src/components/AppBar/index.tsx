@@ -18,7 +18,9 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 
 import BuyDialog from '../BuyDialog';
 
-import { DrawerBoxContent, DrawerPageList, StyledAppBar } from './styles';
+import {
+  DrawerBoxContent, DrawerPageList, StyledAppBar, StyledButton,
+} from './styles';
 import { Images } from '../../constants';
 
 export interface IResponsiveAppBarProps {
@@ -76,7 +78,12 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               }}
             >
               <DrawerBoxContent>
-                <Button variant="contained" color="secondary" onClick={() => dialogRef.current?.openDialog()}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => dialogRef.current?.openDialog()}
+                  sx={{ borderWidth: 2 }}
+                >
                   <Typography>Faça seu pedido</Typography>
                 </Button>
                 <DrawerPageList>
@@ -128,16 +135,16 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
 
           {/* WhatsApp buy dialog */}
           <Box sx={{ flexGrow: 0 }}>
-            <Button
+            <StyledButton
               variant="outlined"
               color="secondary"
               onClick={() => dialogRef.current?.openDialog()}
-              sx={{ display: { xs: 'none', md: 'block' } }}
+              sx={{ display: { xs: 'none', md: 'block' }, borderWidth: 2, borderRadius: 2 }}
             >
               <Typography>
                 Faça seu pedido
               </Typography>
-            </Button>
+            </StyledButton>
           </Box>
         </Toolbar>
       </Container>
