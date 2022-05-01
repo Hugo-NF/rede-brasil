@@ -37,8 +37,10 @@ const SocialMedia = forwardRef((_, ref) => {
       sx={{ paddingY: 10, bgcolor: palette.primary.dark }}
     >
       <TestimonialsContainer>
-        <Title variant="h4">
-          Clientes que confiam na Rede Brasil
+        <Title variant="h2" textAlign="center">
+          O que estão dizendo
+          <br />
+          sobre nós?
         </Title>
         <CarouselContainer
           interval={10000}
