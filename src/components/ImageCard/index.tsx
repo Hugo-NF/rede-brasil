@@ -1,8 +1,8 @@
 import {
   Button,
-  CardActions,
   CardContent,
   CardMedia,
+  Grid,
   IconButton,
   Typography,
   useTheme,
@@ -40,44 +40,50 @@ const ImageCard = ({
     <CardContainer sx={{ backgroundColor: palette.primary.light }}>
       <CardMedia
         component="img"
-        height="220"
+        height="280"
         image={src}
         alt="Store cover"
       />
       <CardContent>
-        <Typography fontSize={28} fontWeight={700} my={2} color="text.primary">
+        <Typography fontSize={27} fontWeight={700} my={2} color="text.primary" m={0}>
           {title}
         </Typography>
-        <Typography fontSize={18} color="text.primary">
+        <Typography fontSize={18} color="text.primary" m={0}>
           {address}
         </Typography>
-        <Button
-          variant="text"
-          href={`https://api.whatsapp.com/send?phone=${whatsappPhone}&text=${encodeURI(message)}`}
-          aria-label="WhatsApp API link"
-          target="_blank"
-          rel="noopener noreferrer"
-          color="secondary"
-          sx={{ paddingLeft: 0 }}
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Typography fontSize={18} color="secondary" sx={{ marginRight: 1 }}>
-            {phone}
-          </Typography>
-          <WhatsAppIcon fontSize="medium" />
-        </Button>
+
+          <Button
+            variant="text"
+            href={`https://api.whatsapp.com/send?phone=${whatsappPhone}&text=${encodeURI(message)}`}
+            aria-label="WhatsApp API link"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="secondary"
+            sx={{ paddingLeft: 0, margin: 0 }}
+          >
+            <Typography fontSize={18} color="secondary" sx={{ marginRight: 1 }}>
+              {phone}
+            </Typography>
+            <WhatsAppIcon fontSize="medium" />
+          </Button>
+          <IconButton
+            aria-label="Google Maps location"
+            href={locationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="secondary"
+            sx={{ marginLeft: 'auto' }}
+          >
+            <LocationIcon fontSize="large" />
+          </IconButton>
+        </Grid>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton
-          aria-label="Google Maps location"
-          href={locationUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          color="secondary"
-          sx={{ marginLeft: 'auto' }}
-        >
-          <LocationIcon fontSize="large" />
-        </IconButton>
-      </CardActions>
     </CardContainer>
   );
 };

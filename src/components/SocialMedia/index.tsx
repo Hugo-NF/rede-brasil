@@ -40,8 +40,16 @@ const SocialMedia = forwardRef((_, ref) => {
           spacing={4}
         >
           <Grid item xs={12} md={6}>
-            <Typography variant="h2">Você já conhece nosso Instagram?</Typography>
-            <Typography>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</Typography>
+            <Typography variant="h3">
+              Quer Ficar por Dentro De
+              <br />
+              Todas As Novidades?
+            </Typography>
+            <Typography mt={2}>
+              Nos acompanhe nas redes sociais e confira
+              <br />
+              conteúdos exclusivos
+            </Typography>
             <Button
               variant="text"
               href="https://www.instagram.com/redebrasildrugstore/"
@@ -51,8 +59,8 @@ const SocialMedia = forwardRef((_, ref) => {
               color="secondary"
               sx={{ paddingLeft: 0 }}
             >
-              <Typography fontSize={18} color="secondary" sx={{ marginRight: 1 }}>
-                Nos siga e ganhe prêmios!
+              <Typography fontSize={18} color="secondary" sx={{ marginRight: 1 }} textTransform="none">
+                Nos Siga E Ganhe Prêmios!
               </Typography>
               <ArrowRight fontSize="medium" />
             </Button>
@@ -67,12 +75,12 @@ const SocialMedia = forwardRef((_, ref) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            height: windowHeight > windowWidth ? 900 : 500,
-            borderRadius: '50%',
+            height: windowHeight > windowWidth ? 1000 : 500,
+            borderRadius: '42%',
             border: '5px solid white',
             backgroundColor: 'white',
-            width: windowWidth + 300,
-            marginTop: -10,
+            width: windowWidth,
+            marginTop: -15,
           }}
         >
           <Grid
@@ -87,21 +95,21 @@ const SocialMedia = forwardRef((_, ref) => {
               <CardShape
                 icon={<img src={Images.CardIcon1} alt="icon opt 0" height={32} width="auto" />}
                 title={{ text: 'Entrega', weight: 700, size: 24 }}
-                subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+                subtitle={{ text: 'Peça no conforto da sua casa', weight: 400, size: 18 }}
               />
             </CardGrid>
             <CardGrid item xs={12} md={4}>
               <CardShape
                 icon={<img src={Images.CardIcon2} alt="icon opt 0" height={32} width="auto" />}
                 title={{ text: 'Descontos', weight: 700, size: 24 }}
-                subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+                subtitle={{ text: 'Desconto nos principais laboratórios', weight: 400, size: 18 }}
               />
             </CardGrid>
             <CardGrid item xs={12} md={4}>
               <CardShape
                 icon={<img src={Images.CardIcon3} alt="icon opt 0" height={32} width="auto" />}
                 title={{ text: 'Farmácia Popular', weight: 700, size: 24 }}
-                subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 18 }}
+                subtitle={{ text: 'Aqui Temos Farmácia Popular', weight: 400, size: 18 }}
               />
             </CardGrid>
           </Grid>

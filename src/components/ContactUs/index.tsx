@@ -59,9 +59,12 @@ const ContactUs = forwardRef((_, ref) => {
       sx={{ display: 'flex', bgcolor: palette.primary.dark }}
     >
       <ContactUsContainer>
-        <Typography variant="h2" mb={2}>Medicamentos de Alto Custo</Typography>
-        <Typography variant="body1">Deseja fazer o orçamento de algum Medicamento de Alto Custo?</Typography>
-        <Typography variant="body1" mb={5}>Este é o lugar certo.</Typography>
+        <Typography variant="h2" mb={2} textTransform="uppercase">Medicamentos de Alto Custo</Typography>
+        <Typography variant="body1" mb={5} textAlign="center">
+          Informe o medicamento que necessita e receba o orçamento para
+          <br />
+          demanda judicial em até 1 hora!
+        </Typography>
         <form onSubmit={formik.handleSubmit}>
           <Grid
             container
@@ -143,6 +146,7 @@ const ContactUs = forwardRef((_, ref) => {
                   type="submit"
                   variant="contained"
                   color="secondary"
+                  size="large"
                 >
                   <Typography textTransform="none">Enviar</Typography>
                 </Button>

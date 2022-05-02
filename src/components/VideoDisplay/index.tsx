@@ -32,7 +32,7 @@ const VideoDisplay = forwardRef((_, ref) => {
         spacing={4}
       >
         <Grid item xs={12}>
-          <SessionTitle fontSize={32} fontWeight={700}>Confira neste vídeo um pouco mais a Rede Brasil e o que fazemos!</SessionTitle>
+          <SessionTitle fontSize={32} fontWeight={700}>Conheça um pouco mais sobre nós!</SessionTitle>
         </Grid>
         <Grid item xs={12}>
           <iframe

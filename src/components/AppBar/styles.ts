@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import {
   AppBar,
   Box,
+  Button,
   List,
 } from '@mui/material';
 
@@ -24,3 +25,10 @@ export const DrawerBoxContent = styled(Box)`
 export const DrawerPageList = styled(List)`
   width: 100%;
 `;
+
+export const StyledButton = styled(Button)(() => ({
+  ':hover': {
+    color: 'black',
+    backgroundColor: '#FFC61D',
+  },
+}));
