@@ -39,15 +39,22 @@ const AboutUs = forwardRef((_, ref) => {
             <Title variant="h4">
               Sobre Nós
             </Title>
-            <AboutUsText color="text.secondary" variant="body2">
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here,
-              making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-              and a search for lorem ipsum will uncover many web sites still in their infancy.
-              Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at ullamcorper dui.
-              Aliquam sollicitudin libero mollis neque ultricies eleifend. Vivamus consequat iaculis auctor.
-              Morbi ultrices faucibus tellus, quis luctus sapien blandit sed. Nulla facilisi. Integer.
+            <AboutUsText color="text.secondary" variant="body1">
+              A Rede Brasil Drugstore é uma rede de
+              <br />
+              farmácias com a cara do Brasil. Nascemos
+              <br />
+              com o propósito de levar você, nosso cliente
+              <br />
+              final, os melhores medicamentos com um
+              <br />
+              preço popular e justo de verdade. Nossa
+              <br />
+              missão é conectar você a qualidade de vida,
+              <br />
+              cuidando para te servir com o melhor
+              <br />
+              atendimento e o menor preço.
             </AboutUsText>
           </AboutUsGrid>
         </Grid>
