@@ -12,9 +12,19 @@ export interface IProductHeroProps {
 
 const covers = [
   {
-    image: Images.HeroCover,
-    title: 'Slide 0',
-    subtitle: 'Lorem Ipsum 0',
+    image: Images.HeroCover1,
+    title: 'Title 0',
+    subtitle: 'Subtitle 0',
+  },
+  {
+    image: Images.HeroCover2,
+    title: 'Slide 1',
+    subtitle: 'Subtitle 1',
+  },
+  {
+    image: Images.HeroCover3,
+    title: 'Slide 2',
+    subtitle: 'Subtitle 2',
   },
 ];
 
@@ -36,6 +46,8 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
       ref={ref}
       nextSessionRef={nextSessionRef}
       sxBackground={{
+        marginTop: -60,
+        minHeight: 1080,
         backgroundImage: `url(${covers[slide].image})`,
         backgroundColor: palette.background.default, // Average color of the background image.
         backgroundPosition: 'center',
@@ -44,7 +56,17 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
       {/* Increase the network loading priority of the background image. */}
       <img
         style={{ display: 'none' }}
-        src={Images.HeroCover}
+        src={Images.HeroCover1}
+        alt="increase priority"
+      />
+      <img
+        style={{ display: 'none' }}
+        src={Images.HeroCover2}
+        alt="increase priority"
+      />
+      <img
+        style={{ display: 'none' }}
+        src={Images.HeroCover3}
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2">
