@@ -146,6 +146,7 @@ const ContactUs = forwardRef((_, ref) => {
                   type="submit"
                   variant="contained"
                   color="secondary"
+                  size="large"
                 >
                   <Typography textTransform="none">Enviar</Typography>
                 </Button>

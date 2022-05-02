@@ -58,7 +58,7 @@ const MarketplaceDialog = forwardRef<IMarketplaceDialogHandle, object>((_, ref) 
           <CardGrid item xs={12} md={6}>
             <CardShape
               icon={<img src={Images.CardIcon1} alt="icon opt 0" height={64} width="auto" />}
-              title={{ text: 'Distrito Federal e Entorno', weight: 700, size: 18 }}
+              title={{ text: 'Farmácias App', weight: 700, size: 18 }}
               subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 15 }}
               onClick={() => console.log('Card press 0')}
             />
@@ -66,7 +66,7 @@ const MarketplaceDialog = forwardRef<IMarketplaceDialogHandle, object>((_, ref) 
           <CardGrid item xs={12} md={6}>
             <CardShape
               icon={<img src={Images.CardIcon2} alt="icon opt 1" height={64} width="auto" />}
-              title={{ text: 'Outras Regiões', weight: 700, size: 18 }}
+              title={{ text: 'WhatsApp', weight: 700, size: 18 }}
               subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 15 }}
               onClick={() => console.log('Card press 1')}
             />
