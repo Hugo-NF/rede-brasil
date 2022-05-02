@@ -77,19 +77,19 @@ const SocialMedia = forwardRef((_, ref) => {
           sx={{
             height: windowHeight > windowWidth ? 1000 : 500,
             borderRadius: '42%',
-            border: '5px solid white',
             backgroundColor: 'white',
-            width: windowWidth,
+            width: windowWidth - 15,
+            overflow: 'hidden',
             marginTop: -15,
           }}
         >
           <Grid
             container
             direction="row"
-            justifyContent="center"
+            justifyContent="space-between"
             alignItems="center"
-            rowSpacing={2}
-            sx={{ width: '75%' }}
+            rowSpacing={4}
+            sx={{ width: '100%', paddingX: 10 }}
           >
             <CardGrid item xs={12} md={4}>
               <CardShape

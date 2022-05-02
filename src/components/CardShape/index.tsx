@@ -47,10 +47,10 @@ const ShapeCard = ({
             {icon}
           </Grid>
           <TextGrid item xs>
-            <Typography fontSize={title.size} fontWeight={title.weight} color="text.quaternary" gutterBottom>
+            <Typography fontSize={title.size} fontWeight={title.weight} color="text.quaternary" gutterBottom textAlign="center">
               {title.text}
             </Typography>
-            <Typography fontSize={subtitle.size} fontWeight={subtitle.weight} color="text.tertiary" gutterBottom>
+            <Typography fontSize={subtitle.size} fontWeight={subtitle.weight} color="text.tertiary" gutterBottom textAlign="center">
               {subtitle.text}
             </Typography>
           </TextGrid>
