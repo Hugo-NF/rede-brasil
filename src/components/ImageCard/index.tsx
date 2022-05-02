@@ -37,7 +37,7 @@ const ImageCard = ({
   const { palette } = useTheme();
 
   return (
-    <CardContainer sx={{ backgroundColor: palette.primary.light }}>
+    <CardContainer sx={{ backgroundColor: palette.primary.light, minWidth: 380 }}>
       <CardMedia
         component="img"
         height="280"
@@ -45,10 +45,10 @@ const ImageCard = ({
         alt="Store cover"
       />
       <CardContent>
-        <Typography fontSize={27} fontWeight={700} my={2} color="text.primary" m={0}>
+        <Typography fontSize={27} fontWeight={700} my={2} color="text.primary" m={1}>
           {title}
         </Typography>
-        <Typography fontSize={18} color="text.primary" m={0}>
+        <Typography fontSize={18} color="text.primary" m={1}>
           {address}
         </Typography>
         <Grid
