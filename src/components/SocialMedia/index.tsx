@@ -93,23 +93,23 @@ const SocialMedia = forwardRef((_, ref) => {
           >
             <CardGrid item sm={12} md={6} lg={4}>
               <CardShape
-                icon={<img src={Images.CardIcon1} alt="icon opt 0" height={32} width="auto" />}
+                icon={<img src={Images.CardIcon1} alt="icon opt 0" height={64} width="auto" />}
                 title={{ text: 'Entrega', weight: 700, size: 24 }}
-                subtitle={{ text: 'Peça no conforto da sua casa', weight: 400, size: 18 }}
+                subtitle={{ text: 'Peça no conforto da sua casa', weight: 400, size: 16 }}
               />
             </CardGrid>
             <CardGrid item sm={12} md={6} lg={4}>
               <CardShape
-                icon={<img src={Images.CardIcon2} alt="icon opt 0" height={32} width="auto" />}
+                icon={<img src={Images.CardIcon2} alt="icon opt 0" height={64} width="auto" />}
                 title={{ text: 'Descontos', weight: 700, size: 24 }}
-                subtitle={{ text: 'Desconto nos principais laboratórios', weight: 400, size: 18 }}
+                subtitle={{ text: 'O produto que você deseja com desconto nos principais laboratórios', weight: 400, size: 16 }}
               />
             </CardGrid>
             <CardGrid item sm={12} md={6} lg={4}>
               <CardShape
-                icon={<img src={Images.CardIcon3} alt="icon opt 0" height={32} width="auto" />}
+                icon={<img src={Images.CardIcon3} alt="icon opt 0" height={64} width="auto" />}
                 title={{ text: 'Farmácia Popular', weight: 700, size: 24 }}
-                subtitle={{ text: 'Aqui Temos Farmácia Popular', weight: 400, size: 18 }}
+                subtitle={{ text: 'Aqui Temos Farmácia Popular', weight: 400, size: 16 }}
               />
             </CardGrid>
           </Grid>
