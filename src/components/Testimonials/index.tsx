@@ -18,17 +18,17 @@ const items = [
   {
     image: Images.Testimonials1,
     name: 'Rodrigo Alves',
-    description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+    description: 'Ótimo atendimento e ótimos preços! Sem querer, eles incluíram um produto a mais na minha compra, mas me ligaram em seguida para fazer a devolução do dinheiro.',
   },
   {
     image: Images.Testimonials2,
     name: 'Lívia Nunes',
-    description: 'If you use this site regularly and would like to help keep the site on the Internet, please consider donating a small sum to help pay for the hosting and bandwidth bill. There is no minimum donation, any sum is appreciated - click here to donate using PayPal. Thank you for your support.',
+    description: 'Um boa localização na Asa Sul, uma Drogaria bem montada e com uma grande variedade de medicamentos e produtos, ótimo atendimento e preços acessíveis.',
   },
   {
     image: Images.Testimonials3,
-    name: 'Rodrigo Alves',
-    description: 'If you use this site regularly and would like to help keep the site on the Internet, please consider donating a small sum to help pay for the hosting and bandwidth bill. There is no minimum donation, any sum is appreciated - click here to donate using PayPal. Thank you for your support.',
+    name: 'Lucas Cabral',
+    description: 'Solicitei um remédio para minha filha às 3:00(madrugada) e às 3:25 já estava medicando-a. Parabéns pelo excelente serviço prestado.',
   },
 ];
 
@@ -54,8 +54,11 @@ const SocialMedia = forwardRef((_, ref) => {
             style: {
               backgroundColor: 'transparent',
               borderRadius: 0,
+              marginLeft: 'auto',
+              marginRight: 'auto',
             },
           }}
+          navButtonsAlwaysVisible
           NextIcon={<img src={Images.RightArrowIcon} width={48} height={48} alt="next icon" />}
           PrevIcon={<img src={Images.LeftArrowIcon} width={48} height={48} alt="prev icon" />}
         >

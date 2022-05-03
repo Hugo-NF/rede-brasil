@@ -7,16 +7,17 @@ export const CardContainer = styled(Card)`
   flex: 1;
   padding: 10px 80px;
   min-width: 288px,
+  min-height: 350px,
   justify-content: center;
   align-items: center;
 `;
 
 export const HeadingText = styled(Typography)`
-  font-size: 28px;
-  margin-bottom: 0px;
+  font-size: 32px;
+  margin-bottom: 4px;
 `;
 
 export const Text = styled(Typography)`
-  font-size: 14px;
-  margin-bottom: 4px;
+  font-size: 18px;
+  margin: 4px 0px;
 `;
