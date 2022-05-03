@@ -54,7 +54,7 @@ const Units = forwardRef((_, ref) => (
       </Title>
       <Grid container spacing={4}>
         {units.map((unit) => (
-          <Grid key={unit.title} item xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
+          <Grid key={unit.title} item xs={12} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center' }}>
             <ImageCard
               src={unit.src}
               title={unit.title}

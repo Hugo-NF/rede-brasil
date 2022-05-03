@@ -59,11 +59,9 @@ const ContactUs = forwardRef((_, ref) => {
       sx={{ display: 'flex', bgcolor: palette.primary.dark }}
     >
       <ContactUsContainer>
-        <Typography variant="h2" mb={2} textTransform="uppercase">Medicamentos de Alto Custo</Typography>
-        <Typography variant="body1" mb={5} textAlign="center">
-          Informe o medicamento que necessita e receba o orçamento para
-          <br />
-          demanda judicial em até 1 hora!
+        <Typography variant="h2" mb={2} textAlign="center" textTransform="uppercase" fontSize={48}>Medicamentos de Alto Custo</Typography>
+        <Typography variant="body1" mb={5} textAlign="center" fontSize={24}>
+          Informe o medicamento que necessita e receba o orçamento para demanda judicial em até 1 hora!
         </Typography>
         <form onSubmit={formik.handleSubmit}>
           <Grid
@@ -71,11 +69,17 @@ const ContactUs = forwardRef((_, ref) => {
             direction="column"
             justifyContent="center"
             alignItems="center"
+            sx={{
+              display: 'flex',
+              maxWidth: '75%',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
           >
             {/* Name and email row */}
             <Grid
               container
-              spacing={5}
+              columnSpacing={25}
             >
               <Grid item xs={12} md={6}>
                 <TextField

@@ -39,16 +39,12 @@ const SocialMedia = forwardRef((_, ref) => {
           container
           spacing={4}
         >
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: matches ? 'flex-start' : 'center' }}>
             <Typography variant="h3">
-              Quer Ficar por Dentro De
-              <br />
-              Todas As Novidades?
+              Quer Ficar por Dentro De Todas As Novidades?
             </Typography>
-            <Typography mt={2}>
-              Nos acompanhe nas redes sociais e confira
-              <br />
-              conteúdos exclusivos
+            <Typography mt={2} fontSize={22}>
+              Nos acompanhe nas redes sociais e confira conteúdos exclusivos
             </Typography>
             <Button
               variant="text"
@@ -57,7 +53,7 @@ const SocialMedia = forwardRef((_, ref) => {
               target="_blank"
               rel="noopener noreferrer"
               color="secondary"
-              sx={{ paddingLeft: 0 }}
+              sx={{ paddingLeft: 0, alignSelf: matches ? 'flex-start' : 'center' }}
             >
               <Typography fontSize={18} color="secondary" sx={{ marginRight: 1 }} textTransform="none">
                 Nos Siga E Ganhe Prêmios!

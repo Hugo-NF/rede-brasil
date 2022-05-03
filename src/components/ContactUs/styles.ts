@@ -8,6 +8,4 @@ export const ContactUsContainer = styled(Container)`
   flex-direction: column;
   margin-top: 5%;
   margin-bottom: 5%;
-  align-items: center;
-  justify-content: center;
 `;
