@@ -1,15 +1,20 @@
 import {
-  Fragment, RefObject, useCallback, useState, useRef, ElementRef,
+  ElementRef,
+  // Fragment,
+  RefObject,
+  useCallback,
+  // useState,
+  useRef,
 } from 'react';
 
 import {
   Box,
   Button,
   Container,
-  Divider,
+  // Divider,
   IconButton,
-  ListItem,
-  SwipeableDrawer,
+  // ListItem,
+  // SwipeableDrawer,
   Toolbar,
   Typography,
 } from '@mui/material';
@@ -19,7 +24,10 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 import MarketplaceDialog from '../MarketplaceDialog';
 
 import {
-  DrawerBoxContent, DrawerPageList, StyledAppBar, StyledButton,
+  // DrawerBoxContent,
+  // DrawerPageList,
+  StyledAppBar,
+  StyledButton,
 } from './styles';
 import { Images } from '../../constants';
 
@@ -29,7 +37,7 @@ export interface IResponsiveAppBarProps {
 }
 
 const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
-  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  // const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const dialogRef = useRef<ElementRef<typeof MarketplaceDialog>>(null);
 
   const handleScroll = useCallback((ref: RefObject<HTMLInputElement>) => {
@@ -61,12 +69,12 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               aria-label="menu mobile icon button"
               aria-controls="menu-mobile"
               aria-haspopup="true"
-              onClick={() => setDrawerOpen(true)}
+              // onClick={() => setDrawerOpen(true)}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            <SwipeableDrawer
+            {/* <SwipeableDrawer
               anchor="left"
               open={drawerOpen}
               onOpen={() => setDrawerOpen(true)}
@@ -78,14 +86,14 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               }}
             >
               <DrawerBoxContent>
-                {/* <Button
+                <Button
                   variant="contained"
                   color="secondary"
                   onClick={() => dialogRef.current?.openDialog()}
                   sx={{ borderWidth: 2 }}
                 >
                   <Typography>Faça seu pedido</Typography>
-                </Button> */}
+                </Button>
                 <DrawerPageList>
                   {pages.map((page, index) => (
                     <Fragment key={page}>
@@ -99,7 +107,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
                   ))}
                 </DrawerPageList>
               </DrawerBoxContent>
-            </SwipeableDrawer>
+            </SwipeableDrawer> */}
           </Box>
 
           {/* Mobile logo image */}
