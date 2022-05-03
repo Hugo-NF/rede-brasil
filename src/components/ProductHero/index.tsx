@@ -13,18 +13,18 @@ export interface IProductHeroProps {
 const covers = [
   {
     image: Images.HeroCover1,
-    title: 'Title 0',
-    subtitle: 'Subtitle 0',
+    title: <Typography color="inherit" align="center" variant="h2">REDE BRASIL</Typography>,
+    subtitle: 'Cuidando de você e te servindo com o melhor',
   },
   {
     image: Images.HeroCover2,
-    title: 'Slide 1',
-    subtitle: 'Subtitle 1',
+    title: <Typography color="inherit" align="center" variant="h2">REDE BRASIL</Typography>,
+    subtitle: 'Cuidando de você e te servindo com o melhor',
   },
   {
     image: Images.HeroCover3,
-    title: 'Slide 2',
-    subtitle: 'Subtitle 2',
+    title: <Typography color="inherit" align="center" variant="h2">REDE BRASIL</Typography>,
+    subtitle: 'Cuidando de você e te servindo com o melhor',
   },
 ];
 
@@ -70,9 +70,7 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
         src={Images.HeroCover3}
         alt="increase priority"
       />
-      <Typography color="inherit" align="center" variant="h2">
-        {covers[slide].title}
-      </Typography>
+      {covers[slide].title}
       <Typography
         color="inherit"
         align="center"
