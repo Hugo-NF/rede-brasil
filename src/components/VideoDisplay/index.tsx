@@ -43,7 +43,7 @@ const VideoDisplay = forwardRef((_, ref) => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            style={{ borderRadius: 10 }}
+            style={{ borderRadius: 10, maxWidth: videoWidth }}
           />
         </Grid>
       </Grid>
