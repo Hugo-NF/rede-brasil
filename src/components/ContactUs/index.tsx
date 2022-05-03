@@ -22,7 +22,7 @@ interface IContactUsForm {
   message: string;
 }
 
-const whatsappPhone = '+5561998062229';
+const whatsappPhone = '5561998062229';
 
 const ContactUs = forwardRef((_, ref) => {
   const { palette } = useTheme();

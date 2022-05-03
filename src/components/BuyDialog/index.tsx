@@ -32,24 +32,24 @@ const UnitOptions = [
   {
     value: 'asa-sul',
     name: 'Asa Sul',
-    whatsappPhone: '+5561999511783',
+    whatsappPhone: '5561999511783',
   },
   {
     value: 'samambaia',
     name: 'Samambaia',
-    whatsappPhone: '+5561985065927',
+    whatsappPhone: '5561985065927',
   },
   {
     value: 'samambaia-superbom',
     name: 'Samambaia Super Bom',
-    whatsappPhone: '+5561999934009',
+    whatsappPhone: '5561999934009',
   },
 ];
 
 const UnitPhones: Record<string, string> = {
-  'asa-sul': '+5561999511783',
-  samambaia: '+5561985065927',
-  'samambaia-superbom': '+5561999934009',
+  'asa-sul': '5561999511783',
+  samambaia: '5561985065927',
+  'samambaia-superbom': '5561999934009',
 };
 
 const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
