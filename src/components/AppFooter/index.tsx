@@ -15,7 +15,7 @@ import {
   Instagram as InstagramIcon,
 } from '@mui/icons-material';
 
-import BuyDialog from '../BuyDialog';
+import MarketplaceDialog from '../MarketplaceDialog';
 
 import { Images } from '../../constants';
 import {
@@ -38,14 +38,14 @@ const AppFooter = ({ pages, refs }: IAppFooterProps) => {
     }
   }, []);
 
-  const dialogRef = useRef<ElementRef<typeof BuyDialog>>(null);
+  const dialogRef = useRef<ElementRef<typeof MarketplaceDialog>>(null);
 
   return (
     <Typography
       component="footer"
       sx={{ display: 'flex', bgcolor: 'primary.main', justifyContent: 'center' }}
     >
-      <BuyDialog ref={dialogRef} />
+      <MarketplaceDialog ref={dialogRef} />
       <FooterContainer sx={{ my: 2, display: 'flex' }}>
         <Grid container spacing={4}>
           {/* Logo grid - first column */}

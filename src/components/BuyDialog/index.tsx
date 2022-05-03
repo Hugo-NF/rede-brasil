@@ -30,32 +30,26 @@ export interface IBuyDialogHandle {
 
 const UnitOptions = [
   {
+    value: 'asa-sul',
+    name: 'Asa Sul',
+    whatsappPhone: '+5561999511783',
+  },
+  {
     value: 'samambaia',
     name: 'Samambaia',
-    whatsappPhone: '+5561998062229',
+    whatsappPhone: '+5561985065927',
   },
   {
     value: 'samambaia-superbom',
     name: 'Samambaia Super Bom',
-    whatsappPhone: '+5561998062229',
-  },
-  {
-    value: 'asa-sul',
-    name: 'Asa Sul',
-    whatsappPhone: '+5561998062229',
-  },
-  {
-    value: 'marketplace',
-    name: 'Marketplace',
-    whatsappPhone: '+5561998062229',
+    whatsappPhone: '+5561999934009',
   },
 ];
 
 const UnitPhones: Record<string, string> = {
-  samambaia: '+5561998062229',
-  'samambaia-superbom': '+5561998062229',
-  'asa-sul': '+5561998062229',
-  marketplace: '+5561998062229',
+  'asa-sul': '+5561999511783',
+  samambaia: '+5561985065927',
+  'samambaia-superbom': '+5561999934009',
 };
 
 const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
@@ -74,8 +68,6 @@ const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
     setError(false);
     if (selectedUnit === '') {
       setError(true);
-    } else if (selectedUnit === 'marketplace') {
-      marketplaceRef.current?.openDialog();
     } else {
       window.open(`https://api.whatsapp.com/send?phone=${UnitPhones[selectedUnit]}`);
       setDialogOpen(false);
@@ -117,9 +109,6 @@ const BuyDialog = forwardRef<IBuyDialogHandle, object>((_, ref) => {
               onChange={(e) => setSelectedUnit(e.target.value)}
               error={error}
             >
-              <MenuItem key="" value="">
-                <MenuOptionText fontStyle="italic">Selecione</MenuOptionText>
-              </MenuItem>
               {UnitOptions.map((unit) => (
                 <MenuItem key={unit.value} value={unit.value}>
                   <MenuOptionText>{unit.name}</MenuOptionText>
