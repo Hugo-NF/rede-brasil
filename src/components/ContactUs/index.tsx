@@ -59,8 +59,8 @@ const ContactUs = forwardRef((_, ref) => {
       sx={{ display: 'flex', bgcolor: palette.primary.dark }}
     >
       <ContactUsContainer>
-        <Typography variant="h2" mb={2} textAlign="center" textTransform="uppercase" fontSize={48}>Medicamentos de Alto Custo</Typography>
-        <Typography variant="body1" mb={5} textAlign="center" fontSize={24}>
+        <Typography variant="h2" mb={2} textAlign="center" textTransform="uppercase" fontSize={36}>Medicamentos de Alto Custo</Typography>
+        <Typography variant="body1" mb={5} textAlign="center" fontSize={18}>
           Informe o medicamento que necessita e receba o orçamento para demanda judicial em até 1 hora!
         </Typography>
         <form onSubmit={formik.handleSubmit}>

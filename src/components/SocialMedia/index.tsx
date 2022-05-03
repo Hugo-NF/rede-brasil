@@ -71,8 +71,8 @@ const SocialMedia = forwardRef((_, ref) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            height: windowHeight > windowWidth ? 1000 : 650,
-            borderRadius: '42%',
+            height: windowHeight > windowWidth ? 1080 : 650,
+            borderRadius: windowHeight > windowWidth ? '25%' : '42%',
             backgroundColor: 'white',
             width: windowWidth - 15,
             overflow: 'hidden',
