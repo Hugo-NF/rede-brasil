@@ -34,11 +34,11 @@ const VideoDisplay = forwardRef((_, ref) => {
         <Grid item xs={12}>
           <SessionTitle fontSize={32} fontWeight={700}>Conheça um pouco mais sobre nós!</SessionTitle>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={10}>
           <iframe
             width={videoWidth}
             height={videoHeight}
-            src="https://www.youtube.com/embed/zsr8R4pZfRw"
+            src="https://www.youtube.com/embed/13kos0RTF9w"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
