@@ -65,7 +65,7 @@ const SocialMedia = forwardRef((_, ref) => {
               <ArrowRight fontSize="medium" />
             </Button>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
             <img src={Images.SocialMedia} height={matches ? 624 : 450} width="auto" alt="about us cover" />
           </Grid>
         </Grid>
@@ -75,7 +75,7 @@ const SocialMedia = forwardRef((_, ref) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            height: windowHeight > windowWidth ? 1000 : 500,
+            height: windowHeight > windowWidth ? 1000 : 650,
             borderRadius: '42%',
             backgroundColor: 'white',
             width: windowWidth - 15,
@@ -89,23 +89,23 @@ const SocialMedia = forwardRef((_, ref) => {
             justifyContent="space-between"
             alignItems="center"
             rowSpacing={4}
-            sx={{ width: '100%', paddingX: 10 }}
+            sx={{ width: '70%', minHeight: windowHeight > windowWidth ? 1000 : 650 }}
           >
-            <CardGrid item xs={12} md={4}>
+            <CardGrid item sm={12} md={6} lg={4}>
               <CardShape
                 icon={<img src={Images.CardIcon1} alt="icon opt 0" height={32} width="auto" />}
                 title={{ text: 'Entrega', weight: 700, size: 24 }}
                 subtitle={{ text: 'Peça no conforto da sua casa', weight: 400, size: 18 }}
               />
             </CardGrid>
-            <CardGrid item xs={12} md={4}>
+            <CardGrid item sm={12} md={6} lg={4}>
               <CardShape
                 icon={<img src={Images.CardIcon2} alt="icon opt 0" height={32} width="auto" />}
                 title={{ text: 'Descontos', weight: 700, size: 24 }}
                 subtitle={{ text: 'Desconto nos principais laboratórios', weight: 400, size: 18 }}
               />
             </CardGrid>
-            <CardGrid item xs={12} md={4}>
+            <CardGrid item sm={12} md={6} lg={4}>
               <CardShape
                 icon={<img src={Images.CardIcon3} alt="icon opt 0" height={32} width="auto" />}
                 title={{ text: 'Farmácia Popular', weight: 700, size: 24 }}
