@@ -13,6 +13,8 @@ import BoxShape from '../assets/box-shape.svg';
 import CardIcon1 from '../assets/card-icon-1.svg';
 import CardIcon2 from '../assets/card-icon-2.svg';
 import CardIcon3 from '../assets/card-icon-3.svg';
+import CardIcon4 from '../assets/card-icon-4.svg';
+import CardIcon5 from '../assets/card-icon-5.svg';
 import Testimonials1 from '../assets/testimonials-1.jpg';
 import Testimonials2 from '../assets/testimonials-2.jpg';
 import Testimonials3 from '../assets/testimonials-3.jpg';
@@ -33,6 +35,8 @@ export {
   CardIcon1,
   CardIcon2,
   CardIcon3,
+  CardIcon4,
+  CardIcon5,
   Testimonials1,
   Testimonials2,
   Testimonials3,

@@ -52,20 +52,20 @@ const MarketplaceDialog = forwardRef<IMarketplaceDialogHandle, object>((_, ref) 
       </IconButton>
       <DialogContentContainer>
         <DialogTitle>
-          Marketplace
+          Escolha o meio para realizar o pedido
         </DialogTitle>
         <Grid container rowSpacing={2}>
           <CardGrid item xs={12} md={6}>
             <CardShape
-              icon={<img src={Images.CardIcon1} alt="icon opt 0" height={64} width="auto" />}
+              icon={<img src={Images.CardIcon4} alt="icon opt 0" height={64} width="auto" />}
               title={{ text: 'Farmácias App', weight: 700, size: 18 }}
               subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 15 }}
-              onClick={() => console.log('Card press 0')}
+              onClick={() => window.open('https://www.farmaciasapp.com.br/rede-brasil-asa-sul')}
             />
           </CardGrid>
           <CardGrid item xs={12} md={6}>
             <CardShape
-              icon={<img src={Images.CardIcon2} alt="icon opt 1" height={64} width="auto" />}
+              icon={<img src={Images.CardIcon5} alt="icon opt 1" height={64} width="auto" />}
               title={{ text: 'WhatsApp', weight: 700, size: 18 }}
               subtitle={{ text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras.', weight: 400, size: 15 }}
               onClick={() => console.log('Card press 1')}
