@@ -78,14 +78,14 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               }}
             >
               <DrawerBoxContent>
-                <Button
+                {/* <Button
                   variant="contained"
                   color="secondary"
                   onClick={() => dialogRef.current?.openDialog()}
                   sx={{ borderWidth: 2 }}
                 >
                   <Typography>Faça seu pedido</Typography>
-                </Button>
+                </Button> */}
                 <DrawerPageList>
                   {pages.map((page, index) => (
                     <Fragment key={page}>
