@@ -1,6 +1,6 @@
-import HeroCover1 from '../assets/hero-1.png';
-import HeroCover2 from '../assets/hero-2.png';
-import HeroCover3 from '../assets/hero-3.png';
+import HeroCover1 from '../assets/hero-1.jpg';
+import HeroCover2 from '../assets/hero-2.jpg';
+import HeroCover3 from '../assets/hero-3.jpg';
 import Logo from '../assets/logo.png';
 import AboutUsLogo from '../assets/aboutus-logo.png';
 import SocialMedia from '../assets/socialmedia.png';
@@ -18,6 +18,7 @@ import CardIcon5 from '../assets/card-icon-5.svg';
 import Testimonials1 from '../assets/testimonials-1.jpg';
 import Testimonials2 from '../assets/testimonials-2.jpg';
 import Testimonials3 from '../assets/testimonials-3.jpg';
+import Transition from '../assets/transition.svg';
 
 export {
   HeroCover1,
@@ -40,4 +41,5 @@ export {
   Testimonials1,
   Testimonials2,
   Testimonials3,
+  Transition,
 };

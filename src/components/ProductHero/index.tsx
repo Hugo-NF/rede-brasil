@@ -48,10 +48,11 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
       sxBackground={{
         marginTop: -80,
         minHeight: 1080,
-        backgroundImage: `url(${covers[slide].image})`,
+        backgroundImage: `url(${Images.Transition}), url(${covers[slide].image})`,
         backgroundColor: palette.background.default, // Average color of the background image.
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat, repeat',
+        backgroundPosition: 'bottom, center',
+        backgroundSize: 'auto, cover',
       }}
     >
       {/* Increase the network loading priority of the background image. */}
