@@ -1,9 +1,7 @@
 import {
   ElementRef,
-  // Fragment,
   RefObject,
   useCallback,
-  // useState,
   useRef,
 } from 'react';
 
@@ -11,10 +9,7 @@ import {
   Box,
   Button,
   Container,
-  // Divider,
   IconButton,
-  // ListItem,
-  // SwipeableDrawer,
   Toolbar,
   Typography,
 } from '@mui/material';
@@ -22,14 +17,13 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material';
 
 import MarketplaceDialog from '../MarketplaceDialog';
+import Drawer from '../Drawer';
+import { Images } from '../../constants';
 
 import {
-  // DrawerBoxContent,
-  // DrawerPageList,
   StyledAppBar,
   StyledButton,
 } from './styles';
-import { Images } from '../../constants';
 
 export interface IResponsiveAppBarProps {
   pages: Array<string>;
@@ -37,8 +31,8 @@ export interface IResponsiveAppBarProps {
 }
 
 const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
-  // const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const dialogRef = useRef<ElementRef<typeof MarketplaceDialog>>(null);
+  const drawerRef = useRef<ElementRef<typeof Drawer>>(null);
 
   const handleScroll = useCallback((ref: RefObject<HTMLInputElement>) => {
     if (ref.current) {
@@ -51,6 +45,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
       <Container maxWidth="xl">
         {/* Absolute position elements */}
         <MarketplaceDialog ref={dialogRef} />
+        <Drawer pages={pages} refs={refs} dialogRef={dialogRef} ref={drawerRef} />
         <Toolbar disableGutters>
           {/* Desktop Logo */}
           <Typography
@@ -69,45 +64,11 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
               aria-label="menu mobile icon button"
               aria-controls="menu-mobile"
               aria-haspopup="true"
-              // onClick={() => setDrawerOpen(true)}
+              onClick={() => drawerRef.current?.openDrawer()}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            {/* <SwipeableDrawer
-              anchor="left"
-              open={drawerOpen}
-              onOpen={() => setDrawerOpen(true)}
-              onClose={() => setDrawerOpen(false)}
-              sx={{
-                flex: 1,
-                width: 100,
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              <DrawerBoxContent>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => dialogRef.current?.openDialog()}
-                  sx={{ borderWidth: 2 }}
-                >
-                  <Typography>Faça seu pedido</Typography>
-                </Button>
-                <DrawerPageList>
-                  {pages.map((page, index) => (
-                    <Fragment key={page}>
-                      <ListItem
-                        onClick={() => handleScroll(refs[index])}
-                      >
-                        <Typography textAlign="center" color="text.secondary">{page}</Typography>
-                      </ListItem>
-                      <Divider />
-                    </Fragment>
-                  ))}
-                </DrawerPageList>
-              </DrawerBoxContent>
-            </SwipeableDrawer> */}
           </Box>
 
           {/* Mobile logo image */}
