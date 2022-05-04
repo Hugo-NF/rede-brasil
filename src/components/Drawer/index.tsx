@@ -11,7 +11,7 @@ import {
   Button,
   Divider,
   ListItem,
-  SwipeableDrawer,
+  Drawer,
   Typography,
 } from '@mui/material';
 
@@ -21,19 +21,19 @@ import {
   DrawerPageList,
 } from './styles';
 
-export interface IDrawerProps {
+export interface IAppDrawerProps {
   pages: Array<string>;
   refs: Array<RefObject<HTMLInputElement>>;
   dialogRef: RefObject<IMarketplaceDialogHandle>;
 }
 
-export interface IDrawerHandle {
+export interface IAppDrawerHandle {
   openDrawer: () => void;
   closeDrawer: () => void;
   toggleDrawer: () => void;
 }
 
-const Drawer = forwardRef<IDrawerHandle, IDrawerProps>(({ pages, refs, dialogRef }: IDrawerProps, ref) => {
+const AppDrawer = forwardRef<IAppDrawerHandle, IAppDrawerProps>(({ pages, refs, dialogRef }: IAppDrawerProps, ref) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   useImperativeHandle(ref, () => ({
@@ -49,10 +49,9 @@ const Drawer = forwardRef<IDrawerHandle, IDrawerProps>(({ pages, refs, dialogRef
   }, []);
 
   return (
-    <SwipeableDrawer
+    <Drawer
       anchor="left"
       open={drawerOpen}
-      onOpen={() => setDrawerOpen(true)}
       onClose={() => setDrawerOpen(false)}
       sx={{
         flex: 1,
@@ -82,7 +81,7 @@ const Drawer = forwardRef<IDrawerHandle, IDrawerProps>(({ pages, refs, dialogRef
           ))}
         </DrawerPageList>
       </DrawerBoxContent>
-    </SwipeableDrawer>
+    </Drawer>
   );
 });
-export default Drawer;
+export default AppDrawer;
