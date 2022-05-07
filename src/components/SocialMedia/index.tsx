@@ -67,22 +67,21 @@ const SocialMedia = forwardRef((_, ref) => {
         </Grid>
         <Grid
           container
-          direction="row"
+          direction="column"
           justifyContent="center"
           alignItems="center"
           sx={{
-            height: windowHeight > windowWidth ? 1080 : 650,
-            borderRadius: windowHeight > windowWidth ? '25%' : '42%',
+            height: windowWidth > breakpoints.values.lg ? 400 : 1000,
+            borderRadius: windowHeight > windowWidth ? '25%' : '40%',
             backgroundColor: 'white',
-            width: windowWidth - 15,
-            overflow: 'hidden',
-            marginTop: -15,
+            width: windowWidth + 200,
+            marginTop: -10,
           }}
         >
           <Grid
             container
             direction="row"
-            justifyContent="space-between"
+            justifyContent="center"
             alignItems="center"
             rowSpacing={4}
             sx={{ width: '70%', minHeight: windowHeight > windowWidth ? 1000 : 650 }}
