@@ -1,5 +1,5 @@
 import {
-  forwardRef, Ref, RefObject, useEffect, useState,
+  forwardRef, Ref, RefObject, useEffect, useMemo, useState,
 } from 'react';
 import { Typography, useTheme } from '@mui/material';
 import ProductHeroLayout from './layout';
@@ -10,28 +10,28 @@ export interface IProductHeroProps {
   nextSessionRef: RefObject<HTMLInputElement>;
 }
 
-const covers = [
-  {
-    image: Images.HeroCover1,
-    title: <Typography color="inherit" align="center" variant="h2">REDE BRASIL</Typography>,
-    subtitle: 'Cuidando de você e te servindo com o melhor',
-  },
-  {
-    image: Images.HeroCover2,
-    title: <Typography color="inherit" align="center" variant="h2">REDE BRASIL</Typography>,
-    subtitle: 'Cuidando de você e te servindo com o melhor',
-  },
-  {
-    image: Images.HeroCover3,
-    title: <Typography color="inherit" align="center" variant="h2">REDE BRASIL</Typography>,
-    subtitle: 'Cuidando de você e te servindo com o melhor',
-  },
-];
-
 const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<HTMLElement> | undefined) => {
   const { palette } = useTheme();
 
   const [slide, setSlide] = useState<number>(0);
+
+  const covers = useMemo(() => ([
+    {
+      image: Images.HeroCover1,
+      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#ffffff') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#ffffff') }}>Cuidando de você e te servindo com o melhor</Typography>,
+    },
+    {
+      image: Images.HeroCover2,
+      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#ffffff') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#ffffff') }}>Cuidando de você e te servindo com o melhor</Typography>,
+    },
+    {
+      image: Images.HeroCover3,
+      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#ffffff') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#ffffff') }}>Cuidando de você e te servindo com o melhor</Typography>,
+    },
+  ]), [palette]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -72,14 +72,7 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
         alt="increase priority"
       />
       {covers[slide].title}
-      <Typography
-        color="inherit"
-        align="center"
-        variant="h5"
-        sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
-      >
-        {covers[slide].subtitle}
-      </Typography>
+      {covers[slide].subtitle}
     </ProductHeroLayout>
   );
 });
