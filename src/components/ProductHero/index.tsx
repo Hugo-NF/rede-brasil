@@ -18,18 +18,18 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
   const covers = useMemo(() => ([
     {
       image: Images.HeroCover1,
-      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#ffffff') }}>REDE BRASIL</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#ffffff') }}>Cuidando de você e te servindo com o melhor</Typography>,
+      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
     },
     {
       image: Images.HeroCover2,
-      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#ffffff') }}>REDE BRASIL</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#ffffff') }}>Cuidando de você e te servindo com o melhor</Typography>,
+      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
     },
     {
       image: Images.HeroCover3,
-      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#ffffff') }}>REDE BRASIL</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#ffffff') }}>Cuidando de você e te servindo com o melhor</Typography>,
+      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
     },
   ]), [palette]);
 
@@ -46,13 +46,13 @@ const ProductHero = forwardRef(({ nextSessionRef }: IProductHeroProps, ref: Ref<
       ref={ref}
       nextSessionRef={nextSessionRef}
       sxBackground={{
-        marginTop: -80,
+        marginTop: -25,
         minHeight: 1080,
-        backgroundImage: `url(${Images.Transition}), url(${covers[slide].image})`,
-        backgroundColor: palette.background.default, // Average color of the background image.
-        backgroundRepeat: 'no-repeat, repeat',
-        backgroundPosition: 'bottom, center',
-        backgroundSize: 'auto, cover',
+        backgroundImage: `url(${Images.Transition}), linear-gradient(rgba(0, 0, 0, 0.427),rgba(0, 0, 0, 0.4)), url(${covers[slide].image})`,
+        backgroundColor: 'black', // Average color of the background image.
+        backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
+        backgroundPosition: 'bottom, top, bottom',
+        backgroundSize: 'auto, cover, 1920px 1000px',
       }}
     >
       {/* Increase the network loading priority of the background image. */}

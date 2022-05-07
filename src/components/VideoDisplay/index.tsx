@@ -15,8 +15,8 @@ const VideoDisplay = forwardRef((_, ref) => {
   const { palette } = useTheme();
   const window = useWindowSize();
 
-  const videoWidth = useMemo(() => (window.width ? window.width * 0.6 : 1280), [window]);
-  const videoHeight = useMemo(() => (window.height ? window.height * 0.6 : 720), [window]);
+  const videoWidth = useMemo(() => (window.width ? window.width * 0.7 : 1280), [window]);
+  const videoHeight = useMemo(() => (videoWidth ? (videoWidth / (16 / 9)) : 720), [videoWidth]);
 
   return (
     <VideoBox
@@ -32,7 +32,7 @@ const VideoDisplay = forwardRef((_, ref) => {
         spacing={4}
       >
         <Grid item xs={12}>
-          <SessionTitle fontSize={32} fontWeight={700}>Conheça um pouco mais sobre nós!</SessionTitle>
+          <SessionTitle fontSize={32} fontWeight={700} mb={8}>Conheça um pouco mais sobre nós!</SessionTitle>
         </Grid>
         <Grid item xs={10}>
           <iframe

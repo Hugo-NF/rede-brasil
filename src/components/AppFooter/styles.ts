@@ -37,7 +37,7 @@ export const SocialMediaRow = styled(Grid)`
 
 export const StyledButton = styled(Button)(() => ({
   ':hover': {
-    color: 'black',
+    color: '#F00118',
     backgroundColor: '#FFC61D',
   },
 }));
