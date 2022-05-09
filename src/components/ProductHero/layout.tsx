@@ -22,7 +22,7 @@ const Background = styled(Box)({
   position: 'absolute',
   left: 0,
   right: 0,
-  top: 0,
+  top: 80,
   bottom: 0,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -58,8 +58,8 @@ const ProductHeroLayout = React.forwardRef(
         >
           {children}
           <Background sx={sxBackground} />
-          <IconButton color="secondary" onClick={() => handleScroll(nextSessionRef)} sx={{ position: 'absolute', bottom: 32 }}>
-            <ArrowDownIcon fontSize="large" color="inherit" />
+          <IconButton color="secondary" onClick={() => handleScroll(nextSessionRef)} sx={{ position: 'absolute', bottom: 32, fontSize: 48 }}>
+            <ArrowDownIcon fontSize="inherit" color="inherit" />
           </IconButton>
         </Container>
       </ProductHeroLayoutRoot>

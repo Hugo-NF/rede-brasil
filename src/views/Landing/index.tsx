@@ -24,7 +24,7 @@ const Landing = () => {
   return (
     <>
       <AppBar pages={pages} refs={refs} />
-      <ProductHero ref={ProductHeroRef} nextSessionRef={AboutUsRef} />
+      <ProductHero ref={ProductHeroRef} refs={refs} />
       <AboutUs ref={AboutUsRef} />
       <VideoDisplay />
       <SocialMedia />
