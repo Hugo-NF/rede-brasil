@@ -16,7 +16,7 @@ import { Images } from '../../constants';
 
 const AboutUs = forwardRef((_, ref) => {
   const { breakpoints } = useTheme();
-  const matches = useMediaQuery(breakpoints.up('md'));
+  const matches = useMediaQuery(breakpoints.up('lg'));
 
   return (
     <Box

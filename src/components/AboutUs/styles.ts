@@ -3,7 +3,7 @@ import { Container, Grid, Typography } from '@mui/material';
 
 export const AboutUsContainer = styled(Container)`
   display: flex;
-  margin-top: 5%;
+  margin-top: 12%;
   margin-bottom: 5%;
   position: relative;
   flex-direction: column;
