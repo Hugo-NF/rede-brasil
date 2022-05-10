@@ -24,14 +24,8 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
     },
     {
       image: Images.HeroCover2,
-      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
-      refIndex: 1,
-    },
-    {
-      image: Images.HeroCover3,
       title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta, orçamento em até 1 horas, proposta para demanda judicial</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta e receba em até 1 hora. Proposta para demanda judicial.</Typography>,
       refIndex: 4,
     },
   ]), [palette]);
@@ -49,13 +43,13 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
       ref={ref}
       nextSessionRef={refs[covers[slide].refIndex]}
       sxBackground={{
-        marginTop: -25,
+        marginTop: -30,
         minHeight: 1080,
         backgroundImage: `url(${Images.Transition}), linear-gradient(rgba(0, 0, 0, 0.427),rgba(0, 0, 0, 0.4)), url(${covers[slide].image})`,
         backgroundColor: 'black', // Average color of the background image.
         backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
         backgroundPosition: 'bottom, top, bottom',
-        backgroundSize: 'auto, cover, 1920px 1000px',
+        backgroundSize: 'auto, cover, cover',
       }}
     >
       {/* Increase the network loading priority of the background image. */}

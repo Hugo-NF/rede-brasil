@@ -41,7 +41,7 @@ const ResponsiveAppBar = ({ pages, refs }: IResponsiveAppBarProps) => {
   }, []);
 
   return (
-    <StyledAppBar position="fixed" sx={{ maxHeight: 80 }}>
+    <StyledAppBar position="sticky" sx={{ maxHeight: 80 }}>
       <Container maxWidth="xl">
         {/* Absolute position elements */}
         <MarketplaceDialog ref={dialogRef} />

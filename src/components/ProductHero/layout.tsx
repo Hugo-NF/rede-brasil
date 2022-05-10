@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Theme, styled, SxProps } from '@mui/material/styles';
-import { Box, Container, IconButton } from '@mui/material';
+import {
+  Box, Container, IconButton, Typography,
+} from '@mui/material';
 
 import {
   KeyboardArrowDown as ArrowDownIcon,
@@ -22,7 +24,7 @@ const Background = styled(Box)({
   position: 'absolute',
   left: 0,
   right: 0,
-  top: 80,
+  top: 0,
   bottom: 0,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -58,7 +60,18 @@ const ProductHeroLayout = React.forwardRef(
         >
           {children}
           <Background sx={sxBackground} />
-          <IconButton color="secondary" onClick={() => handleScroll(nextSessionRef)} sx={{ position: 'absolute', bottom: 32, fontSize: 48 }}>
+          <IconButton
+            color="secondary"
+            onClick={() => handleScroll(nextSessionRef)}
+            sx={{
+              position: 'absolute',
+              display: 'flex',
+              flexDirection: 'column',
+              bottom: 32,
+              fontSize: 48,
+            }}
+          >
+            <Typography>Saiba Mais</Typography>
             <ArrowDownIcon fontSize="inherit" color="inherit" />
           </IconButton>
         </Container>
