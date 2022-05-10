@@ -1,6 +1,5 @@
 import HeroCover1 from '../assets/hero-1.jpg';
 import HeroCover2 from '../assets/hero-2.jpg';
-import HeroCover3 from '../assets/hero-3.jpg';
 import Logo from '../assets/logo.png';
 import AboutUsLogo from '../assets/aboutus-logo.png';
 import SocialMedia from '../assets/socialmedia.png';
@@ -23,7 +22,6 @@ import Transition from '../assets/transition.svg';
 export {
   HeroCover1,
   HeroCover2,
-  HeroCover3,
   Logo,
   AboutUsLogo,
   SocialMedia,
