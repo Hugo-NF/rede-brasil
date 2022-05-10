@@ -1,7 +1,7 @@
 import {
   forwardRef, Ref, RefObject, useEffect, useMemo, useState,
 } from 'react';
-import { Typography, useTheme } from '@mui/material';
+import { Typography, useMediaQuery, useTheme } from '@mui/material';
 import ProductHeroLayout from './layout';
 
 import { Images } from '../../constants';
@@ -11,24 +11,24 @@ export interface IProductHeroProps {
 }
 
 const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElement> | undefined) => {
-  const { palette } = useTheme();
-
+  const { palette, breakpoints } = useTheme();
+  const matches = useMediaQuery(breakpoints.up('sm'));
   const [slide, setSlide] = useState<number>(0);
 
   const covers = useMemo(() => ([
     {
       image: Images.HeroCover1,
-      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
+      title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
       refIndex: 1,
     },
     {
       image: Images.HeroCover2,
-      title: <Typography color="inherit" align="center" fontSize={64} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={30} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta e receba em até 1 hora. Proposta para demanda judicial.</Typography>,
+      title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta e receba em até 1 hora. Proposta para demanda judicial.</Typography>,
       refIndex: 4,
     },
-  ]), [palette]);
+  ]), [palette, matches]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
