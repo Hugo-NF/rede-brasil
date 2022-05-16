@@ -48,7 +48,7 @@ const ImageCard = ({
         <Typography fontSize={27} fontWeight={700} my={2} color="text.primary" m={1}>
           {title}
         </Typography>
-        <Typography fontSize={18} color="text.primary" m={1}>
+        <Typography fontSize={18} color="text.primary" m={1} textTransform="uppercase">
           {address}
         </Typography>
         <Grid

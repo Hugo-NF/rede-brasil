@@ -25,7 +25,7 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
     {
       image: Images.HeroCover2,
       title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta e receba em até 1 hora. Proposta para demanda judicial.</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta. Proposta para demanda judicial.</Typography>,
       refIndex: 4,
     },
   ]), [palette, matches]);

@@ -24,8 +24,8 @@ const units = [
   },
   {
     src: Images.SamambaiaUnit,
-    title: 'Samambaia',
-    address: 'QN 209 - Samambaia Norte, 72341-451',
+    title: 'Samambaia QN 209',
+    address: 'QN 209 Conjunto 1 Lote, 25 - Samambaia Norte, 72341-451',
     locationUrl: 'https://www.google.com.br/maps/place/Rede+Brasil+Drugstore+QN+209/@-15.8779109,-48.1203309,14z/data=!4m9!1m2!2m1!1srede+brasil!3m5!1s0x935bd2f250f8c427:0x7a58b71d46ac8350!8m2!3d-15.880002!4d-48.1047147!15sCgtyZWRlIGJyYXNpbFoNIgtyZWRlIGJyYXNpbJIBCWRydWdzdG9yZQ',
     phone: '(61) 98506-5927',
     whatsappPhone: '5561985065927',
@@ -33,7 +33,7 @@ const units = [
   },
   {
     src: Images.SuperbomUnit,
-    title: 'Samambaia Super Bom',
+    title: 'Samambaia QN 409',
     address: 'QS 409 conjunto D lote 3 e 4 loja 02 - Samambaia Sul, 72321-535',
     locationUrl: 'https://www.google.com.br/maps/place/Rede+Brasil+Drugstore+QS+409/@-15.877958,-48.10501,17z/data=!3m1!4b1!4m5!3m4!1s0x935bcdb5ad6ac687:0xa7c5d8a9d720f9eb!8m2!3d-15.8779632!4d-48.1028213',
     phone: '(61) 99993-4009',

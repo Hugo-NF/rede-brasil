@@ -22,7 +22,7 @@ interface IContactUsForm {
   message: string;
 }
 
-const whatsappPhone = '556132243333';
+const whatsappPhone = '5561999511783';
 
 const ContactUs = forwardRef((_, ref) => {
   const { palette } = useTheme();
@@ -61,7 +61,7 @@ const ContactUs = forwardRef((_, ref) => {
       <ContactUsContainer>
         <Typography variant="h2" mb={2} textAlign="center" textTransform="uppercase" fontSize={36}>Medicamentos de Alto Custo</Typography>
         <Typography variant="body1" mb={5} textAlign="center" fontSize={18}>
-          Informe o medicamento que necessita e receba o orçamento para demanda judicial em até 1 hora!
+          Informe o medicamento que necessita e receba o orçamento para demanda judicial.
         </Typography>
         <form onSubmit={formik.handleSubmit}>
           <Grid
@@ -85,7 +85,7 @@ const ContactUs = forwardRef((_, ref) => {
                 <TextField
                   id="name"
                   label="Nome"
-                  variant="standard"
+                  variant="outlined"
                   color="secondary"
                   placeholder="Maria"
                   fullWidth
@@ -102,7 +102,7 @@ const ContactUs = forwardRef((_, ref) => {
                 <TextField
                   id="email"
                   label="E-mail"
-                  variant="standard"
+                  variant="outlined"
                   color="secondary"
                   placeholder="seuemail@gmail.com"
                   fullWidth
@@ -125,7 +125,7 @@ const ContactUs = forwardRef((_, ref) => {
                   fullWidth
                   multiline
                   rows={5}
-                  variant="standard"
+                  variant="outlined"
                   color="secondary"
                   placeholder="Ex.: Gostaria de um orçamento para..."
                   InputLabelProps={{ sx: { color: 'white' } }}
