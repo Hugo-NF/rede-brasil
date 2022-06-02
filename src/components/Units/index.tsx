@@ -49,7 +49,7 @@ const Units = forwardRef((_, ref) => (
     sx={{ display: 'flex', bgcolor: 'background.main' }}
   >
     <UnitsContainer>
-      <Title variant="h4">
+      <Title variant="h4" fontSize={50} fontFamily="Source Serif Pro">
         Unidades
       </Title>
       <Grid

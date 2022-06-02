@@ -1,13 +1,11 @@
 import { forwardRef, useMemo } from 'react';
 import {
   Grid,
+  Typography,
   useTheme,
 } from '@mui/material';
 
-import {
-  SessionTitle,
-  VideoBox,
-} from './styles';
+import { VideoBox } from './styles';
 
 import useWindowSize from '../../hooks/useWindowSize';
 
@@ -32,7 +30,14 @@ const VideoDisplay = forwardRef((_, ref) => {
         spacing={4}
       >
         <Grid item xs={12}>
-          <SessionTitle fontSize={32} fontWeight={700} mb={8}>Conheça um pouco mais sobre nós!</SessionTitle>
+          <Typography
+            fontSize={48}
+            fontWeight={700}
+            mb={8}
+            fontFamily="Source Serif Pro"
+          >
+            Conheça um pouco mais sobre nós!
+          </Typography>
         </Grid>
         <Grid item xs={10}>
           <iframe

@@ -36,7 +36,7 @@ const AboutUs = forwardRef((_, ref) => {
             xs={12}
             md={6}
           >
-            <Title variant="h4">
+            <Title variant="h4" fontSize={59} fontFamily="Source Serif Pro">
               Sobre Nós
             </Title>
             <AboutUsText color="text.secondary" variant="body1">

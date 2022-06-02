@@ -42,7 +42,12 @@ const SocialMedia = forwardRef((_, ref) => {
       sx={{ paddingY: 10, bgcolor: palette.primary.dark }}
     >
       <TestimonialsContainer>
-        <Title variant="h2" textAlign="center">
+        <Title
+          variant="h2"
+          textAlign="center"
+          fontSize={64}
+          fontFamily="Source Serif Pro"
+        >
           O que estão dizendo
           <br />
           sobre nós?

@@ -40,7 +40,7 @@ const SocialMedia = forwardRef((_, ref) => {
           spacing={4}
         >
           <Grid item xs={12} md={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: matches ? 'flex-start' : 'center' }}>
-            <Typography variant="h3">
+            <Typography variant="h3" fontSize={48} fontFamily="Source Serif Pro">
               Quer Ficar por Dentro De Todas As Novidades?
             </Typography>
             <Typography mt={2} fontSize={22}>
