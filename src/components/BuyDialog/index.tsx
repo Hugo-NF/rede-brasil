@@ -36,12 +36,12 @@ const UnitOptions = [
   },
   {
     value: 'samambaia',
-    name: 'Samambaia',
+    name: 'Samambaia QN 209',
     whatsappPhone: '5561985065927',
   },
   {
     value: 'samambaia-superbom',
-    name: 'Samambaia Super Bom',
+    name: 'Samambaia QS 409',
     whatsappPhone: '5561999934009',
   },
 ];

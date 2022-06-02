@@ -4,6 +4,8 @@ import {
   Container,
   Grid,
   Typography,
+  useTheme,
+  useMediaQuery,
 } from '@mui/material';
 
 import { Images } from '../../constants';
@@ -32,32 +34,38 @@ const ShapeCard = ({
   title,
   subtitle,
   onClick,
-}: IShapeCardProps) => (
-  <CardComponent
-    elevation={0}
-    sx={{
-      backgroundImage: `url(${Images.BoxShape})`,
-    }}
-    onClick={onClick}
-  >
-    <CardContent>
-      <Container>
-        <CardGrid container>
-          <Grid item xs>
-            {icon}
-          </Grid>
-          <TextGrid item xs>
-            <Typography fontSize={title.size} fontWeight={title.weight} color="text.quaternary" gutterBottom textAlign="center">
-              {title.text}
-            </Typography>
-            <Typography fontSize={subtitle.size} fontWeight={subtitle.weight} color="text.tertiary" gutterBottom textAlign="center">
-              {subtitle.text}
-            </Typography>
-          </TextGrid>
-        </CardGrid>
-      </Container>
-    </CardContent>
-  </CardComponent>
-);
+}: IShapeCardProps) => {
+  const { breakpoints } = useTheme();
+  const matches = useMediaQuery(breakpoints.down('sm'));
+
+  return (
+    <CardComponent
+      elevation={0}
+      sx={{
+        backgroundImage: `url(${Images.BoxShape})`,
+        backgroundSize: matches ? '260px auto' : 'auto',
+      }}
+      onClick={onClick}
+    >
+      <CardContent>
+        <Container>
+          <CardGrid container>
+            <Grid item xs>
+              {icon}
+            </Grid>
+            <TextGrid item xs>
+              <Typography fontSize={title.size} fontWeight={title.weight} color="text.quaternary" gutterBottom textAlign="center">
+                {title.text}
+              </Typography>
+              <Typography fontSize={subtitle.size} fontWeight={subtitle.weight} color="text.tertiary" gutterBottom textAlign="center">
+                {subtitle.text}
+              </Typography>
+            </TextGrid>
+          </CardGrid>
+        </Container>
+      </CardContent>
+    </CardComponent>
+  );
+};
 
 export default ShapeCard;
