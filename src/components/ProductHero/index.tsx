@@ -18,15 +18,32 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
   const covers = useMemo(() => ([
     {
       image: Images.HeroCover1,
-      title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>REDE BRASIL</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cuidando de você e te servindo com o melhor</Typography>,
+      title: (
+        <>
+          <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>Rede Brasil,</Typography>
+          <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>cuidando de você</Typography>
+          <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>com o melhor.</Typography>
+        </>
+      ),
+      subtitle: (
+        <>
+          <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Aproveite nossas ofertas online</Typography>
+          <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>e em unidades físicas!</Typography>
+        </>
+      ),
       refIndex: 1,
     },
     {
       image: Images.HeroCover2,
       title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
       subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta. Proposta para demanda judicial.</Typography>,
-      refIndex: 4,
+      refIndex: 1,
+    },
+    {
+      image: Images.HeroCover3,
+      title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
+      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta. Proposta para demanda judicial.</Typography>,
+      refIndex: 1,
     },
   ]), [palette, matches]);
 

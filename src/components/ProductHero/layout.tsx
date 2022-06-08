@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { Theme, styled, SxProps } from '@mui/material/styles';
 import {
-  Box, Container, IconButton, Typography,
+  Box, Container, IconButton,
 } from '@mui/material';
 
-import {
-  KeyboardArrowDown as ArrowDownIcon,
-} from '@mui/icons-material';
+import { Images } from '../../constants';
 
 const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
   color: theme.palette.common.white,
@@ -64,8 +62,7 @@ const ProductHeroLayout = React.forwardRef(
               fontSize: 48,
             }}
           >
-            <Typography>Saiba Mais</Typography>
-            <ArrowDownIcon fontSize="inherit" color="inherit" />
+            <img src={Images.Mouse} width={64} alt="mouse scroll icon" />
           </IconButton>
         </Container>
       </ProductHeroLayoutRoot>
