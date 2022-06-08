@@ -1,8 +1,12 @@
-import {
+import React, {
   forwardRef, Ref, RefObject, useEffect, useMemo, useState,
 } from 'react';
-import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Button, Grid, Typography, useMediaQuery, useTheme,
+} from '@mui/material';
+import { ArrowForwardIos } from '@mui/icons-material';
 import ProductHeroLayout from './layout';
+import { Title, Subtitle } from './styles';
 
 import { Images } from '../../constants';
 
@@ -15,34 +19,126 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
   const matches = useMediaQuery(breakpoints.up('sm'));
   const [slide, setSlide] = useState<number>(0);
 
+  const handleScroll = React.useCallback((scrollRef: React.RefObject<HTMLInputElement>) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+  }, []);
+
   const covers = useMemo(() => ([
     {
       image: Images.HeroCover1,
       title: (
         <>
-          <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>Rede Brasil,</Typography>
-          <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>cuidando de você</Typography>
-          <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>com o melhor.</Typography>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: 'white', display: 'flex', flexDirection: 'row' }}>
+            Rede Brasil
+            <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304' }}>,</Title>
+          </Title>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304' }}>cuidando de você</Title>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304', display: 'flex', flexDirection: 'row' }}>
+            com o
+            <Title fontSize={matches ? 64 : 32} sx={{ color: 'white' }}>&nbsp;melhor.</Title>
+          </Title>
         </>
       ),
       subtitle: (
         <>
-          <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Aproveite nossas ofertas online</Typography>
-          <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>e em unidades físicas!</Typography>
+          <Subtitle fontSize={matches ? 30 : 18}>Aproveite nossas ofertas online</Subtitle>
+          <Subtitle fontSize={matches ? 30 : 18}>e em unidades físicas!</Subtitle>
         </>
       ),
       refIndex: 1,
     },
     {
       image: Images.HeroCover2,
-      title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta. Proposta para demanda judicial.</Typography>,
+      title: (
+        <>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304', display: 'flex', flexDirection: 'row' }}>
+            Cobrimos
+            <Title fontSize={matches ? 64 : 32} sx={{ color: 'white' }}>&nbsp;qualquer</Title>
+          </Title>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#white', display: 'flex', flexDirection: 'row' }}>
+            orçamento
+            <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304' }}>,&nbsp;solicite</Title>
+          </Title>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304' }}>uma proposta.</Title>
+        </>
+      ),
+      subtitle: (
+        <>
+          <Subtitle fontSize={matches ? 30 : 18}>Solicite sua proposta para</Subtitle>
+          <Subtitle fontSize={matches ? 30 : 18}>demanda judicial hoje mesmo,</Subtitle>
+          <Subtitle fontSize={matches ? 30 : 18}>clique abaixo para iniciar!</Subtitle>
+          <Button
+            variant="text"
+            onClick={() => handleScroll(refs[4])}
+            color="secondary"
+            sx={{ paddingLeft: 0, alignSelf: matches ? 'flex-start' : 'center' }}
+          >
+            <Typography
+              fontSize={matches ? 30 : 18}
+              color="secondary"
+              sx={{
+                color: '#FED304',
+                marginRight: 1,
+                marginTop: 4,
+                fontWeight: 700,
+              }}
+              textTransform="none"
+            >
+              Clique para solicitar!
+              <ArrowForwardIos fontSize="medium" />
+            </Typography>
+          </Button>
+        </>
+      ),
       refIndex: 1,
     },
     {
       image: Images.HeroCover3,
-      title: <Typography color="inherit" align="center" fontSize={matches ? 64 : 32} fontWeight={700} sx={{ color: palette.getContrastText('#000000') }}>MEDICAMENTOS DE ALTO CUSTO</Typography>,
-      subtitle: <Typography color="inherit" align="center" fontSize={matches ? 30 : 18} sx={{ mt: 2, color: palette.getContrastText('#000000') }}>Cobrimos qualquer orçamento, solicite uma proposta. Proposta para demanda judicial.</Typography>,
+      title: (
+        <>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304', display: 'flex', flexDirection: 'row' }}>
+            É hora de
+            <Title fontSize={matches ? 64 : 32} sx={{ color: 'white' }}>&nbsp;facilitar</Title>
+          </Title>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#FED304' }}>com o cartão</Title>
+          <Title fontSize={matches ? 64 : 32} sx={{ color: '#white' }}>
+            Rede Brasil!
+          </Title>
+        </>
+      ),
+      subtitle: (
+        <>
+          <Subtitle fontSize={matches ? 30 : 18}>Um cartão sem taxas e</Subtitle>
+          <Subtitle fontSize={matches ? 30 : 18}>burocrácia, do jeito que a sua</Subtitle>
+          <Subtitle fontSize={matches ? 30 : 18}>saúde merece.</Subtitle>
+          <Button
+            variant="text"
+            href="https://bca.brasilcard.net/"
+            aria-label="BrasilCard link"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="secondary"
+            sx={{ paddingLeft: 0, alignSelf: matches ? 'flex-start' : 'center' }}
+          >
+            <Typography
+              fontSize={matches ? 30 : 18}
+              color="secondary"
+              sx={{
+                color: '#FED304',
+                marginRight: 1,
+                marginTop: 4,
+                fontWeight: 700,
+              }}
+              textTransform="none"
+            >
+              Faça o seu hoje!
+              <ArrowForwardIos fontSize="medium" />
+            </Typography>
+          </Button>
+        </>
+      ),
       refIndex: 1,
     },
   ]), [palette, matches]);
@@ -66,11 +162,11 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
         top: 0,
         bottom: 0,
         marginTop: -30,
-        backgroundImage: `url(${covers[slide].image})`,
+        backgroundImage: `url(${Images.Transition}),  url(${covers[slide].image})`,
         backgroundColor: 'black', // Average color of the background image.
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'bottom',
-        backgroundSize: 'auto',
+        backgroundRepeat: 'no-repeat, no-repeat',
+        backgroundPosition: 'bottom, bottom',
+        backgroundSize: 'auto, auto',
       }}
     >
       {/* Increase the network loading priority of the background image. */}
@@ -94,8 +190,21 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
         src={Images.HeroCover31}
         alt="increase priority"
       />
-      {covers[slide].title}
-      {covers[slide].subtitle}
+      <Grid container spacing={2}>
+        <Grid item sm={12} md={6} sx={{ marginTop: 'auto', marginBottom: 'auto' }}>
+          {covers[slide].title}
+          {covers[slide].subtitle}
+        </Grid>
+        <Grid item sm={12} md={6} sx={{ marginTop: 'auto', marginBottom: 'auto' }}>
+          {slide === 2 && (
+            <img
+              src={Images.HeroCover31}
+              alt="cover table aux"
+              width={545}
+            />
+          )}
+        </Grid>
+      </Grid>
     </ProductHeroLayout>
   );
 });
