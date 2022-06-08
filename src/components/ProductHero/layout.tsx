@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Theme, styled, SxProps } from '@mui/material/styles';
 import {
-  Box, Container, IconButton,
+  Box, Container, IconButton, useTheme, useMediaQuery,
 } from '@mui/material';
 
 import { Images } from '../../constants';
@@ -38,6 +38,8 @@ const ProductHeroLayout = React.forwardRef(
       }
     }, []);
 
+    const { breakpoints } = useTheme();
+    const matches = useMediaQuery(breakpoints.up('sm'));
     return (
       <ProductHeroLayoutRoot ref={ref}>
         <Container
@@ -51,19 +53,21 @@ const ProductHeroLayout = React.forwardRef(
         >
           {children}
           <Background sx={sxBackground} />
-          <IconButton
-            color="secondary"
-            onClick={() => handleScroll(nextSessionRef)}
-            sx={{
-              position: 'absolute',
-              display: 'flex',
-              flexDirection: 'column',
-              bottom: 32,
-              fontSize: 48,
-            }}
-          >
-            <img src={Images.Mouse} width={64} alt="mouse scroll icon" />
-          </IconButton>
+          {matches && (
+            <IconButton
+              color="secondary"
+              onClick={() => handleScroll(nextSessionRef)}
+              sx={{
+                position: 'absolute',
+                display: 'flex',
+                flexDirection: 'column',
+                bottom: 32,
+                fontSize: 48,
+              }}
+            >
+              <img src={Images.Mouse} width={64} alt="mouse scroll icon" />
+            </IconButton>
+          )}
         </Container>
       </ProductHeroLayoutRoot>
     );

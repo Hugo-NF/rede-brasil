@@ -66,11 +66,11 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
         top: 0,
         bottom: 0,
         marginTop: -30,
-        backgroundImage: `url(${Images.Transition}), linear-gradient(rgba(0, 0, 0, 0.427),rgba(0, 0, 0, 0.4)), url(${covers[slide].image})`,
+        backgroundImage: `url(${covers[slide].image})`,
         backgroundColor: 'black', // Average color of the background image.
-        backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
-        backgroundPosition: 'bottom, top, bottom',
-        backgroundSize: 'auto, cover, cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'bottom',
+        backgroundSize: 'auto',
       }}
     >
       {/* Increase the network loading priority of the background image. */}
@@ -82,6 +82,16 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
       <img
         style={{ display: 'none' }}
         src={Images.HeroCover2}
+        alt="increase priority"
+      />
+      <img
+        style={{ display: 'none' }}
+        src={Images.HeroCover3}
+        alt="increase priority"
+      />
+      <img
+        style={{ display: 'none' }}
+        src={Images.HeroCover31}
         alt="increase priority"
       />
       {covers[slide].title}
