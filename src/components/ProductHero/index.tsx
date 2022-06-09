@@ -5,10 +5,12 @@ import {
   Button, Grid, Typography, useMediaQuery, useTheme,
 } from '@mui/material';
 import { ArrowForwardIos } from '@mui/icons-material';
-import ProductHeroLayout from './layout';
-import { Title, Subtitle } from './styles';
 
 import { Images } from '../../constants';
+import useWindowSize from '../../hooks/useWindowSize';
+
+import ProductHeroLayout from './layout';
+import { Title, Subtitle } from './styles';
 
 export interface IProductHeroProps {
   refs: Array<RefObject<HTMLInputElement>>;
@@ -18,12 +20,18 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
   const { palette, breakpoints } = useTheme();
   const matches = useMediaQuery(breakpoints.up('sm'));
   const [slide, setSlide] = useState<number>(0);
+  const window = useWindowSize();
 
   const handleScroll = React.useCallback((scrollRef: React.RefObject<HTMLInputElement>) => {
     if (scrollRef.current) {
       scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
   }, []);
+
+  const imageWidth = useMemo(() => {
+    if (window.width === undefined) return 545;
+    return window.width > 545 ? 545 : window.width * 0.7;
+  }, [window]);
 
   const covers = useMemo(() => ([
     {
@@ -162,7 +170,7 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
         top: 0,
         bottom: 0,
         marginTop: -30,
-        backgroundImage: `url(${Images.Transition}),  url(${covers[slide].image})`,
+        backgroundImage: `url(${Images.Transition}), url(${covers[slide].image})`,
         backgroundColor: 'black', // Average color of the background image.
         backgroundRepeat: 'no-repeat, no-repeat',
         backgroundPosition: 'bottom, bottom',
@@ -191,16 +199,16 @@ const ProductHero = forwardRef(({ refs }: IProductHeroProps, ref: Ref<HTMLElemen
         alt="increase priority"
       />
       <Grid container spacing={2}>
-        <Grid item sm={12} md={6} sx={{ marginTop: 'auto', marginBottom: 'auto' }}>
+        <Grid item xs={12} md={6} sx={{ marginTop: 'auto', marginBottom: 'auto' }}>
           {covers[slide].title}
           {covers[slide].subtitle}
         </Grid>
-        <Grid item sm={12} md={6} sx={{ marginTop: 'auto', marginBottom: 'auto' }}>
+        <Grid item xs={12} md={6} sx={{ marginTop: 'auto', marginBottom: 'auto' }}>
           {slide === 2 && (
             <img
               src={Images.HeroCover31}
               alt="cover table aux"
-              width={545}
+              width={imageWidth}
             />
           )}
         </Grid>
