@@ -34,7 +34,7 @@ const units = [
   {
     src: Images.SuperbomUnit,
     title: 'Samambaia QS 409',
-    address: 'QS 409 Conjunto D Lote 3/4 Loja 02 - Samambaia Sul, 72321-535',
+    address: 'QS 409 Conjunto D Loja 3/4 Loja 02 - Samambaia Norte, 72321-535',
     locationUrl: 'https://www.google.com.br/maps/place/Rede+Brasil+Drugstore+QS+409/@-15.877958,-48.10501,17z/data=!3m1!4b1!4m5!3m4!1s0x935bcdb5ad6ac687:0xa7c5d8a9d720f9eb!8m2!3d-15.8779632!4d-48.1028213',
     phone: '(61) 99993-4009',
     whatsappPhone: '5561999934009',
